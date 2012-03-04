@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>虚惊一场</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>虚惊一场</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>今天练习了一下利用phpMyAdmin来导入导出WP的数据，结果执行之后发现中文全变成了问号，当时想肯定是编码的问题。检查了一下导出的sql文件，发现里面确实有很多乱码，但是GB2312、GBK、UTF-8都试了一遍，乱码依旧存在。仔细一看发现，原来导出的sql文件是用两种编码写出来的，phpMyAdmin的工作编码是GB2312，但WP存储的数据是UTF-8，所以不管用GB2312编码还是用UTF-8，总会有乱码存在。这种情况之前没遇到过，所以只好用傻办法，轮换更改编码，把显示正确的内容粘到另一个文本文件中，最后保存为UTF-8。</p>
+
+<p>然而问题依然存在，当我把显示正确的sql文件导入到phpMyAdmin中时，中文仍然会变成问号。在导入的时候可以选择导入文件的字符编码，但我试了很多个，问题还是没有解决。后来到网上搜了一下才知道，phpMyAdmin会把新建数据库的字符集设定为latin1_swedish_ci（估计程序的编写者是瑞典人），在之前导出的sql文件中，包含了新建数据库的命令，因此数据库也就成了latin1_swedish_ci编码，这时再读取中文，自然就变成问号了，并且之后再怎么修改编码也于事无补。换言之，在用phpMyAdmin导入sql文件时，界面中要你指定的字符集与数据库实际的字符集是两个完全独立的概念。找了一些资料后，目前惟一（感觉是）的解决办法是预先在phpMyAdmin中建好相应的数据库，设定好字符集，再用phpMyAdmin的导入功能将数据库进行填充。不过这时要注意的是在sql文件中需要把CREATE DATABASE命令删掉，否则导入时就会提示数据库已经存在而无法导入。</p>
+
+<p>总而言之，在用Ubuntu时，有两样东西我是很害怕的，那就是编码和字体……</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/10/i-turn-out-to-be-shanzhai" title="原来我是山寨……">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2009/10/probability-played-a-trick-on-me" title="被一道概率题玩弄了">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '121 http://yixuan.github.com/?p=121';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>08 October 2009</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#phpMyAdmin-ref">phpMyAdmin <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#SQL-ref">SQL <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#WordPress-ref">WordPress <span>7</span></a></li>
+     
+    	<li><a href="/tags.html#编码-ref">编码 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

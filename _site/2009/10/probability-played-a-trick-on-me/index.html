@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>被一道概率题玩弄了</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>被一道概率题玩弄了</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>今天彻底被一道题目玩弄了。题目是这样的：</p>
+
+<p>某国家为了限制人口增长而实行计划生育，即一对夫妻只能生一胎，但这个国家的人普遍重男轻女，于是经常会有“偷生”的行为，比如一对夫妻一定要生出一个男孩才满意，否则就一直生。假定这个国家原来的男女比例是1：1，问若干年后（还没有第三代），其性别比例会有什么变化。</p>
+
+<p>说实话吧，我看到这段陈述后我的第一反应就是，这不是赤果果地影射C国吗？当然是男的多了。但是计算一下才知道出问题了，最简单的办法就是用几何分布。如果认为生女孩是“失败”（嗯嗯，这里的失败是概率里面经常说的那个失败啊，我可不敢说是通常意义上的那个啊！！！），那么每家的孩子数就服从p=0.5的几何分布，均值为2，由于最后一胎一定是男孩，所以每家平均会有一个女孩，so……比例当然是不变了。</p>
+
+<p>今天丢人了，以后再也不说自己是统计学院出来的……</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/10/a-false-alarm" title="虚惊一场">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2009/10/feeling-tired" title="有点累了">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '124 http://yixuan.github.com/?p=124';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>15 October 2009</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#几何分布-ref">几何分布 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#性别比例-ref">性别比例 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#概率-ref">概率 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>硬盘安装Ubuntu 10.04</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>硬盘安装Ubuntu 10.04</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>整个四月一篇博客也没写，今天来充个数好了，内容非原创，只不过是把Ubuntu硬盘安装的方式记录一下，免得到时候又上网到处找。</p>
+
+<p>* 第一步，下载GRUB4DOS，把其中的grub.exe和grldr解压到C盘根目录。</p>
+
+<p>* 第二步，创建menu.lst，内容如下：</p>
+
+<pre><code>title Install Ubuntu
+root (hd0,1)
+kernel (hd0,1)/vmlinuz boot=casper iso-scan/filename=/ubuntu-10.04-desktop-i386.iso ro quiet
+splash locale=zh_CN.UTF-8
+initrd (hd0,1)/initrd.lz</code></pre>
+
+<p>理论上Windows的C盘应该是(hd0,0)的，但不知为何我这儿成了(hd0,1)。</p>
+
+<p>* 第三步，修改Windows启动项，加上语句</p>
+
+<pre><code>C:\grldr=&quot;Install Ubuntu&quot;</code></pre>
+
+<p>* 第四步，把光盘镜像复制到C盘根目录，并解压其中的vmlinuz和initrd.lz。</p>
+
+<p>* 第五步，重启，进入Ubuntu光盘。其中要注意，安装之前需要在终端执行</p>
+
+<pre><code>sudo umount -l /isodevice</code></pre>
+
+<p>我下的这个版本，安装完Ubuntu后Windows XP的启动菜单会消失，这时需要在终端下执行</p>
+
+<pre><code>sudo update-grub</code></pre>
+
+<p>但据说官方会修复这个问题，把光盘重新打包。</p>
+
+<p>另：关闭按钮放在左边确实有些别扭……</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/04/Ubuntu.png'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/04/Ubuntu.png' /></a></p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2010/03/processing-and-r" title="Processing R，你看见了什么？">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2010/05/processing-pictures-with-a-pencil-sketch-effect-using-r" title="用R处理照片打造铅笔画效果">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '377 http://yixuan.github.com/?p=377';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>30 April 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#安装-ref">安装 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#硬盘-ref">硬盘 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

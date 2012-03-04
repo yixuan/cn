@@ -1,0 +1,9 @@
+---
+layout: post
+title: "你好，世界！"
+category: 
+tags: [静态, 网页, jekyll]
+---
+{% include JB/setup %}
+
+你好，世界！

@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Julia来了</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Julia来了</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <blockquote>
+<h2 id='in_short_because_we_are_greedy'><em>In short, because we are greedy.</em></h2>
+</blockquote>
+
+<p>今天看到一篇文章，是<a href='http://sd.csdn.net/a/20120223/312315.html'>介绍一门编程语言Julia的</a>。文章底下的评论有些扎眼，建议移步看它的<a href='http://julialang.org/blog/2012/02/why-we-created-julia/'>英文原文</a>。文章的作者，同时也是这门语言的创始人之一，<a href='http://karpinski.org/'>Stefan Karpinski</a>，目前是加州大学圣踏芭芭拉分校的一名博士生，但曾经在若干家企业工作过。他自称是一名数据科学家和应用数学家，最近发表的一篇论文题目叫作_Non-Parametric Discrete Mixture Model Recovery via NNMF_。看到这里我隐约感觉到，这门语言有可能是我感兴趣的。</p>
+
+<p>为什么又来了一种语言？作者给出的回答就是第一段的那句话——因为我们贪得无厌。我们想要C的速度，想要Python的通用性，想要R的统计，想要Matlab的代数运算，想要很多很多以及更多。Julia是否能成为这样的一门编程语言我目前还无法预知，但它目前的一些特性确实让我眼前一亮。</p>
+
+<h3 id='rmatlab'>与R及Matlab相似的语法</h3>
+
+<p>Julia的官方网站是<a href='http://julialang.org/'>http://julialang.org/</a>，源代码放置在github上，地址是<a href='https://github.com/JuliaLang/julia'>https://github.com/JuliaLang/julia</a>。从中可以看到一些示例的代码，典型的Matlab风格，但好在与R的差距并不是很大，像我依葫芦画瓢也能写出一些比较简单的代码来，比如下面就是用一个暴力的二重循环来生成一个1000<em>1000的均匀分布随机数矩阵，并计算所有元素之和。</em></p>
+
+<p>Julia:</p>
+
+<pre><code>function fun1j()
+    m = zeros(1000, 1000)
+    s = 0
+    for i = 1:1000
+        for j = 1:1000
+            m[i, j] = rand()
+            s = s + m[i, j]
+        end
+    end
+    s
+end</code></pre>
+
+<p>与之等价的R程序是</p>
+
+<p>R:</p>
+
+<pre><code>fun1r = function() {
+    m = matrix(0, 1000, 1000)
+    s = 0
+    for(i in 1:1000)
+    {
+        for(j in 1:1000)
+        {
+            m[i, j] = runif(1)
+            s = s + m[i, j]
+        }
+    }
+    s
+}</code></pre>
+
+<h3 id='id349'>速度</h3>
+
+<p>速度应该是所有的编程语言都要考虑的内容。我们都知道R的痛点在哪儿，像上面的这个R程序照常理是要挨板子的，但我们还是看看它的运行时间。在我的电脑上（就不贴硬件参数了），运行时间大概为：</p>
+
+<p>R:</p>
+
+<pre><code>&gt; system.time(fun1r())
+  用户  系统   流逝
+5.769 0.004 5.782</code></pre>
+
+<p>然后在Julia中，</p>
+
+<p>Julia:</p>
+
+<pre><code>julia&gt; @elapsed fun1j()
+0.09904909133911133</code></pre>
+
+<p>是的你没看错，只有不到0.1秒。</p>
+
+<p>但这并不是一次有意义的对比，因为上述过程是可以被向量化的。我们用R来把这段程序优化一下：</p>
+
+<p>R:</p>
+
+<pre><code>fun1optr = function() {
+    m = matrix(runif(1000 * 1000), 1000, 1000)
+    sum(m)
+}
+
+&gt; system.time(fun1opt())
+  用户  系统   流逝
+0.048 0.000 0.051</code></pre>
+
+<p>同样地，Julia也进行改写：</p>
+
+<p>Julia:</p>
+
+<pre><code>function fun1optj()
+    m = rand(1000, 1000)
+    sum(m)
+end
+
+julia&gt; @elapsed fun1optj()
+0.008805990219116211</code></pre>
+
+<p>相信结果已经很清楚了。</p>
+
+<h3 id='id350'>有理数</h3>
+
+<p>这可能只是一项很小的功能，但有些时候还是很方便的。Julia用<code>//</code>表示有理数除法，比如</p>
+
+<pre><code>julia&gt; 1//2
+1//2
+
+julia&gt; 11//22
+1//2
+
+julia&gt; 987//654 + 12//34 * 56//78
+84917//48178</code></pre>
+
+<h3 id='id351'>并行</h3>
+
+<p>Julia是一门刚诞生不久的语言，因此它尽可能地采用了最新的设计理念来应对当前的问题，其中对并行的支持是很重要的一点。</p>
+
+<p>要让Julia使用多个CPU或多个核，需要在启动时加上相应的参数，例如下面的命令表示让Julia程序启用2个处理器：</p>
+
+<pre><code>$ ./julia -p 2</code></pre>
+
+<p>Julia提供了许多内置的函数来支持多核的运算，在此引用Julia文档中的一个例子，具体的信息可以在<a href='http://julialang.org/manual/parallel-computing/'>这个页面</a>中获取。</p>
+
+<pre><code>M = {rand(1000,1000) | i=1:10}
+pmap(svd, M)</code></pre>
+
+<p>以上程序就是对10个大矩阵进行并行的奇异值分解。</p>
+
+<h3 id='id352'>接下来的事</h3>
+
+<p>由于时间所限，这里举的都是非常基础的一些例子，而Julia的开发应该说也还是刚刚起步。目前Julia只支持类UNIX系统，如Linux和Mac，已经编译好的二进制文件可以在<a href='https://github.com/JuliaLang/julia/downloads'>这里</a>下载。</p>
+
+<p>Julia会不会成为R的一个良好替代，现在还都是未知，但有一点是肯定的，那就是无论一门语言多么优秀，其生命力永远是由用它的人决定的。R的成功，一部分源于其本身的设计，而更重要的是其背后存在一个强大的开源社区。这里有<a href='http://groups.google.com/group/julia-dev/browse_thread/thread/9f79ed4f8334830a'>一个关于R与Julia的讨论</a>，其中Julia的另一名开发者Viral Shah说了一句特别有意思的话：&#8221;What should julia do in order to provide an alternative to R? In my opinion, it is R&#8217;s libraries and its community that define it - rather than the language design or its implementation.&#8221;</p>
+
+<p>R与Julia的未来发展会如何？我们拭目以待。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2012/01/new-method-to-read-excel-file-in-r" title="用R读取Excel的新方法">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2012/03/hello-world" title="你好，世界！">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '680 http://yixuan.github.com/?p=680';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>28 February 2012</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Julia-ref">Julia <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#R-ref">R <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#R语言-ref">R语言 <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#并行-ref">并行 <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#有理数-ref">有理数 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#编程-ref">编程 <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#语言-ref">语言 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#速度-ref">速度 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

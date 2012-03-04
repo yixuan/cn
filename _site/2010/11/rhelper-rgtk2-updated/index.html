@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>更新一下Rhelper-RGtk2</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>更新一下Rhelper-RGtk2</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>前两天做了一个稍微有些艰难的决定，把<a href='http://yixuan.cos.name/cn/2010/08/rhelper-rgtk2/'>Rhelper-RGtk2</a>更新了一下。主要更新的地方有：</p>
+
+<p>* Rd文档的解析函数全部重写，应该速度比之前的快些；</p>
+
+<p>* Rd文档格式的支持更加完整，但目前<code>\tabular</code>标签的排版还是个很麻烦的问题；</p>
+
+<p>* 新增包选择功能，可以从下拉框中选择软件包，包中的函数会自动列出；</p>
+
+<p>* 新增过滤器功能，在输入框中键入字符串后按回车，函数列表会根据键入的内容进行匹配，相当于<code>apropos()</code>。</p>
+
+<p>测试环境是Windows XP 32位及RGtk2 2.20.3版本，其它环境尚未测试过。</p>
+
+<p>示例：</p>
+
+<pre><code>library(RGtk2);
+Rhelper(&quot;help&quot;);</code></pre>
+
+<p>截图：</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper-RGtk2-20101117.png'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper-RGtk2-20101117-300x235.png' /></a></p>
+
+<p><span>notice type=download</span>下载：<a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper_RGtk2_20101117_uft8.txt'>Rhelper-RGtk2 2010.11.17更新</a>（注：必须在UTF-8编码下打开）<span>/notice</span></p>
+
+<p>目前程序还不是特别稳定，暂时仍处于测试状态。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2010/11/professional-spirit" title="专业精神">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2011/02/fire-to-chaos" title="向琐碎开战">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '480 http://yixuan.github.com/?p=480';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>17 November 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#GUI-ref">GUI <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#RGtk2-ref">RGtk2 <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#Rhelper-ref">Rhelper <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#图形界面-ref">图形界面 <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#帮助-ref">帮助 <span>3</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

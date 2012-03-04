@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Linux下支持自动完成的R编辑器——SciTE</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Linux下支持自动完成的R编辑器——SciTE</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>之前谢老大写了一篇<a href='http://yihui.name/en/2010/08/auto-completion-in-notepad-for-r-script/'>在Notepad++中配置R函数自动完成的文章</a>，甚好甚强大，不过可惜的是Notepad++只能在Windows下用，没有Linux的版本。当然了，Linux下的编辑器也不少，拿Ubuntu来说，简单的有Gedit，高级的有Kate，神级的有Emacs、Vim等等，但本文介绍的SciTE绝对是一款甚小甚强大的编辑器软件。</p>
+
+<p>Ubuntu下安装的方法就不用说了，<code>sudo apt-get install scite</code>就可以搞定。软件非常小，但其功能绝对不容小觑，只要你有耐心设置好配置文件，几乎任何一种语言都可以实现语法高亮、代码折叠和自动完成等功能。下面是编辑R脚本时的截图。</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_autocompletion.png'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_autocompletion.png' /></a></p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_function_tips.png'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_function_tips.png' /></a></p>
+
+<p>要实现上面的效果，需要一些额外的配置文件，可以到下面下载。</p>
+
+<p><span>notice type=download</span>下载：<a href='../wp-content/uploads/2010/09/SciTE_config.zip'>SciTE配置文件</a><span>/notice</span></p>
+
+<p>配置方法：</p>
+
+<p>* 用管理员权限打开/usr/share/scite/SciTEGlobal.properties（具体的位置视系统而定），搜索其中的“import r”语句，将其前面的井号去掉；</p>
+
+<p>* 将附件中的r.api用管理员权限复制到/usr/share/scite中；</p>
+
+<p>* 将附件中的.SciTEUser.properties复制用户目录下，即/home/&lt;用户名&gt;。</p>
+
+<p>一些主要的配置选项都放在.SciTEUser.properties中，其中大都加了注释，可以按需要进行修改。修改时可以参照<a href='http://www.scintilla.org/SciTEDoc.html'>SciTE的官方文档</a>获得完整的说明，没错，那里有上百个选项可以进行自定义，只要你有足够的耐心……</p>
+
+<p>事实上，SciTE是一个跨平台的编辑器，其配置文件也具有良好的兼容性，只需对配置文件做些许修改，在Windows下同样可以完成相同的功能。这里有个Windows版的SciTE，体积是小到令人发指的600K，要使用自动完成功能的话，需要把SciTEGlobal.properties的最后一行改成正确的路径。</p>
+
+<p>下载：<a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_win.zip'>Windows版SciTE</a></p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2010/09/the-road-to-paralleled-r-2-modify-blas" title="R的原生并行2——修改BLAS">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2010/10/maple-singing-ink-waving" title="吟枫舞墨">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '433 http://yixuan.github.com/?p=433';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>19 September 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Linux-ref">Linux <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#SciTE-ref">SciTE <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Ubuntu-ref">Ubuntu <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#编辑器-ref">编辑器 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#自动完成-ref">自动完成 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#配置-ref">配置 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

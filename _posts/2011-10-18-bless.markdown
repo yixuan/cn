@@ -1,0 +1,16 @@
+---
+date: '2011-10-18 15:43:20'
+layout: post
+slug: bless
+status: publish
+title: 烧香
+wordpress_id: '636'
+categories:
+- 生活
+tags:
+- 烧香
+---
+
+这次考试得过啊……
+
+[![](http://yixuan.cos.name/cn/wp-content/uploads/2011/10/Panda.gif)](http://yixuan.cos.name/cn/wp-content/uploads/2011/10/Panda.gif)

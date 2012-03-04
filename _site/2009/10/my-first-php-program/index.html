@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>平生第一个PHP程序</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>平生第一个PHP程序</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>一波未平，一波又起。刚把图片的居中和背景搞定，突然发现文章的自动摘要又出问题了。山寨版学院网站用的是WP Kit CN的插件，但不知为什么，字数控制总是不好使，不管怎么样都会把第一段整个显示出来，好像只能控制段落数而不能控制字数。我看COS用的也是这个插件，怎么就可以精确做到250个字呢？</p>
+
+<p>后来想研究一下插件的代码，但这对于我这个PHP盲来说实在太困难了，光找到那个起作用的函数就花了好长时间。之后半猜半蒙查函数库，算是大概知道怎么回事了，不过得到的结果有点让我吃惊。那个函数里面貌似是通过换行符号“\n”来划分“单词”的，也就是说如果内容本身的分段不多，那么这个函数就基本上没有什么效果了。</p>
+
+<p>我目前对摘要的一个想法是，如果文章有多段，那么摘要就只显示第一段；如果第一段太长，那么再精简句子。有了这个想法后我就开始硬着头皮把WP Kit CN插件的wp-kit-cn.class.php文件（摘要函数所在的文件）进行改写，最后把里面的<code>WKC_excerpt()</code>函数改成了下面的语句：</p>
+
+<pre><code>function WKC_excerpt ($text){
+	global $post;
+	remove_filter(&#39;the_excerpt&#39;, &#39;mul_excerpt&#39;);
+	remove_filter(&#39;the_excerpt_rss&#39;, &#39;mul_excerpt&#39;);
+	if ( &#39;&#39; == $text ) {
+		$text = $post-&gt;post_content;
+		$text = apply_filters(&#39;the_content&#39;, $text);
+		$text = str_replace(&#39;]]&gt;&#39;, &#39;]]&gt;&#39;, $text);
+		$text = strip_tags($text);
+		$text = trim($text);
+		$wordnum = $this-&gt;options[&#39;excerpt_words_number&#39;];
+		$firstpara=explode(&quot;\n&quot;, $text);
+		$text=$firstpara[0];
+		$text=$this-&gt;cut_str($text,$wordnum);
+		$words = explode(&quot;。&quot;, $text);
+		$output = &#39;&#39;;
+		if ( count($words) == 1 ) {
+			$output=$text;
+		}else{
+			for($i=0;$i&lt;count($words)-1;$i++){
+				$output.=$words[$i].&#39;。&#39;;
+			}
+		}
+		$output.=&#39;……&#39;;
+		return $output;
+	}
+	return $text;
+}</code></pre>
+
+<p>其中有些函数和变量是来自这个文件的其它地方，要查看全部的代码的话可以到<a href='http://wordpress.org/extend/plugins/wp-kit-cn/'>http://wordpress.org/extend/plugins/wp-kit-cn/</a>去下载插件。这段程序的意思大概就是先提取文本的第一段，然后截取前<code>$wordnum</code>（通过WP Kit CN的设置获取）个字符，再判断这段文字中有多少个句号，如果没有句号就全部返回，如果有就返回最后一个句号前的所有文本，最后再加上一个意味深长的省略号，就算是完成了。</p>
+
+<p>这段程序其实非常粗糙，首先是没有加上“阅读全文”之类的超链接，我这里是因为模版会在另外一个函数中提供，所以就删了，其实插件原来的文件中是有的；然后就是分句的条件太过简单，没有考虑问号感叹号之类的，不过感觉学院网站的新闻不太可能出现这些符号，所以就偷懒没改。</p>
+
+<p>不管怎么说吧，好歹是自己的第一个PHP程序，就在此纪念一下吧。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/10/enable-winxp-to-search-content-of-all-types-of-files" title="让Windows XP实现所有类型文件的包含文字搜索">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2009/10/my-heart-for-china" title="我的中国心®">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '67 http://yixuan.github.com/?p=67';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>02 October 2009</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#PHP-ref">PHP <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#WordPress-ref">WordPress <span>7</span></a></li>
+     
+    	<li><a href="/tags.html#摘要-ref">摘要 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

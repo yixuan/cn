@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>VIM、文泉驿、器与道</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>VIM、文泉驿、器与道</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>先引一则Joke，来自于<em>Autoconf</em>手册的第一章：</p>
+
+<blockquote>
+<p>A physicist, an engineer, and a computer scientist were discussing the nature of God.</p>
+
+<p>&#8220;Surely a Physicist,&#8221; said the physicist, &#8220;because early in the Creation, God made Light; and you know, Maxwell&#8217;s equations, the dual nature of electromagnetic waves, the relativistic consequences&#8230;&#8221;</p>
+
+<p>&#8220;An Engineer!,&#8221; said the engineer, &#8220;because before making Light, God split the Chaos into Land and Water; it takes a hell of an engineer to handle that big amount of mud, and orderly separation of solids from liquids&#8230;&#8221;</p>
+
+<p>The computer scientist shouted: &#8220;And the Chaos, where do you think it was coming from, hmm?&#8221;</p>
+</blockquote>
+
+<p>最近又在瞎折腾东西。不知是哪天脑子突然短路，决定去碰一碰传说中的上古神器Vim，于是怀着无比敬畏的心情敲下了<code>sudo apt-get install vim</code>。一阵云烟飘过，便来到了神器面前。跟着里面自带的30分钟入门教程还有网上的一些讲解，好歹算是把右脚踏进了门里面。左h右l上k下j，O前o后g头G尾，不得不说用Vim写东西真的跟弹琴一样。</p>
+
+<p>在Ubuntu下玩了一阵子，觉得Vim确实是一个Very Interesting Modifier，于是准备在Windows下也培养培养感情，要不然拿着一个记事本也不好意思见人啊。 在网上下好了相关的文件，打开Vim，感觉默认的字体不怎么好看（应该就是记事本的那种字体），而相比之下Ubuntu下的字体却很清爽，于是准备把字体给换了。上网搜了些教程，也下载试了一些别人推荐的字体，但要么是来历不明（比如各种版本的YaHei），要么是对中文无效，总之折腾了半天还是很乱。此外一个很头疼的问题是等宽字体，英文字体要等宽不是什么难事，但中文就麻烦了，如果要让中文的宽度等于两倍的英文，那么要么是英文太瘦，要么是中文太宽，总之很难协调好。</p>
+
+<p>后来想起Ubuntu下默认的是文泉驿，于是准备在Windows下也试试。看了官网的一些介绍，最后下载的是矢量的微米黑字体。按照官网的介绍，这款字体“很小很强大”，小是因为它的体积只有2M多，解开也不过5M多，但其功能却决不含糊。下面是我配置好字体后Vim的一个截图：</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/01/wenquanyi.png'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/01/wenquanyi.png' /></a></p>
+
+<p>可以看出字体的边缘都很平滑，视觉效果还是不错的。此外这个字体对于中文的等宽处理是让中文之间留出一个空档，避免中文太胖，但每个中文字的左侧都是与英文相对齐的。</p>
+
+<p>说到<a href='http://wenq.org/'>文泉驿</a>感觉确实应该大赞一下这个项目，按照网上流传的一句话，有了文泉驿，终于不用到font文件夹中偷偷拷字体出来了。而我对于文泉驿另外一个欣赏之处是它到处都充满了中国文字的气息，从那句“开彼源兮，斯流永继”，到它的一系列中文<a href='http://zh.wikipedia.org/wiki/%E6%96%87%E6%B3%89%E9%A9%BF'>开发代号</a>（盘古、夸父、炎黄、尧舜、战国、赢政等等），感觉就是一部现代科技下的文字史书。</p>
+
+<p>把字体配置好了之后，又在网上逛了逛，看到了<a href='http://www.cnblogs.com/Henrya2/archive/2009/02/21/1395591.html'>一段操作Vim的截图动画</a>，当时的第一感觉就是，人类的科技已经发达到了这种地步……当然我目前是用不着这些高科技了，所以也没再研究，只是又把一些细节配置了一下。</p>
+
+<p>折腾了半天，似乎感觉到了一种满足感，但仔细想想，花了一整天时间在这上面是不是值得？就算学会甚至精通了Vim，对你是不是真的有很大帮助？就算Vim真的是神器，可它终究也只是一个器啊。如若道已不存，器又有何用呢？</p>
+
+<p>仔细审视一下自己大四以来的生活，发现自己已经很久没有用心读过诗书，也很久没有认真学过知识了，整天好像都是在被一些“器”所诱惑着。这就好比江湖有传闻说某某神兵降世，夺得之后便可无敌于天下，于是各路豪杰无心钻研武艺，只知向神兵进发。而结果如何？众武侠小说已经为我们说明了一切。</p>
+
+<p>“一箪食，一瓢饮，在陋巷”，真正对于道的追求，是要放下很多执念，也是要抵制很多诱惑的。看来我还差得很远很远啊。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/12/in-fact-ms-is-very-humorous" title="其实微软挺幽默的">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2010/01/please-help-me-test-a-program-rhelper" title="请大家帮忙测试一个小程序Rhelper">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '260 http://yixuan.github.com/?p=260';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>04 January 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Vim-ref">Vim <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#器-ref">器 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#文泉驿-ref">文泉驿 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#神器-ref">神器 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#道-ref">道 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

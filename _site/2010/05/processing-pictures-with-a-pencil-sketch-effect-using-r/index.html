@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>用R处理照片打造铅笔画效果</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>用R处理照片打造铅笔画效果</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>之前看过一篇文章，介绍的是如何在GIMP中对照片进行处理，产生一种铅笔画的效果。原文在<a href='http://the-double-0-project.net/blog/?p=58'>这里</a>，步骤主要分四步：</p>
+
+<p>1. 将照片去色；</p>
+
+<p>2. 复制图层，将图层反色；</p>
+
+<p>3. 对上层图层进行高斯模糊；</p>
+
+<p>4. 将上层图层设置为减淡属性；</p>
+
+<p>之前写了一篇<a href='http://yixuan.cos.name/cn/2010/02/blur-and-smoothing/'>跟高斯模糊有关的文章</a>，里面的代码可以直接用，于是简单改了改，就可以实现上面的铅笔画效果了。代码如下：</p>
+
+<pre><code>blur&lt;-function(x,grid,kernelf,...)
+{
+    if(grid&lt;3) stop(&quot;grid should be great than or equal to 3!&quot;);
+    if(grid%%2==0) stop(&quot;grid should be odd number!&quot;);
+    v=sapply(1:grid-(grid+1)/2,kernelf,...);
+    v&lt;-v/sum(v);
+    r&lt;-(grid-1)/2;
+    newx&lt;-tmp&lt;-x;
+    for(i in (r+1):(nrow(x)-r))
+    {
+        tmp[i,]&lt;-colSums(x[(i-r):(i+r),]*v);
+    }
+    for(j in (r+1):(ncol(x)-r))
+    {
+        newx[,j]&lt;-colSums(t(tmp[,(j-r):(j+r)])*v);
+    }
+    return(newx);
+}
+kernel.gauss&lt;-function(x,sigma) dnorm(x,0,sigma);
+blur.gauss&lt;-function(x,grid,sigma) blur(x,grid,kernel.gauss,sigma=sigma);
+
+library(rimage);
+image&lt;-read.jpeg(&quot;demo.jpg&quot;);
+image&lt;-rgb2grey(image);
+m&lt;-blur.gauss(1-image,5,3);
+pencil&lt;-pmin(image+m,1)^2;
+
+# For R before 2.11.0
+plot(imagematrix(pencil));
+
+# For R 2.11.0 and after, may be faster
+x&lt;-dim(pencil)[2];
+y&lt;-dim(pencil)[1];
+par(mar=c(0,0,0,0));
+plot(1,xlim=c(0,x),ylim=c(0,y),type=&quot;n&quot;,asp=1,axes=FALSE,xlab=&quot;&quot;,ylab=&quot;&quot;);
+rasterImage(pencil,0,0,x,500);
+
+# Use biOps package to write JPEG
+library(biOps);
+writeJpeg(&quot;output.jpg&quot;,imagedata(pencil)*255);</code></pre>
+
+<p>示例图片如下（点击看大图）:</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/05/pencil_sketch_demo.jpg'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/05/pencil_sketch_demo-300x187.jpg' /></a></p>
+
+<p>效果图如下（点击看大图）：</p>
+
+<p><a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/05/pencil_sketch_output.jpg'><img alt='' src='http://yixuan.cos.name/cn/wp-content/uploads/2010/05/pencil_sketch_output-300x187.jpg' /></a></p>
+
+<p>biOps包到<a href='http://yixuan.cos.name/cn/wp-content/uploads/2010/05/biOps.zip'>这里</a>下载（包含了依赖文件）。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2010/04/install-ubuntu-10-04-from-hard-disk" title="硬盘安装Ubuntu 10.04">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2010/06/setback-again" title="再遇挫折">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '390 http://yixuan.github.com/?p=390';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>17 May 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#GIMP-ref">GIMP <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#R-ref">R <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#铅笔画-ref">铅笔画 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#高斯模糊-ref">高斯模糊 <span>2</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

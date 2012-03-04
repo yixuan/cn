@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>让Windows XP实现所有类型文件的包含文字搜索</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>让Windows XP实现所有类型文件的包含文字搜索</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>最近几天都在弄WP的模版，虽然我一直是怀着无比崇敬的心情去研究那些免费提供的模版，但再好的模版总会有一些细节不合你的心意——倒不是因为功能太少了，而是因为功能太多以至于有些东西你不想放在页面上。当然了，这对于我这个htmlxmljavascriptphpcss的初级未入门者来说是个好消息——改不过还注释不过吗？</p>
+
+<p>于是乎目前的工作基本上就是找到恰当的模版的恰当的页面然后恰当地注释掉那些显示我不想显示的东西的函数，而我感觉在一大堆PHP语句中找到那些函数的定义简直就跟炼狱一般。最后实在不行就准备用Windows XP的包含文字搜索功能，在文件夹中递归搜索文件。但是曾经有一段时间怎么也搜不出来，后来才知道，原来Windows XP默认的情况是只搜索特定的几种文件类型，比如<em>.txt，而</em>.php却不在其中。</p>
+
+<p>接着就是百度Google一齐上，找到了一个解决方案：<a href='http://www.phpx.com/happy/thread-109195-1-1.html'>http://www.phpx.com/happy/thread-109195-1-1.html</a>。我用的是第二种方法，感觉直观些，就是找到注册表中的HKEY_LOCAL_MACHINE\SYSTEM\ControlSet\Control\ContentIndex，然后把FilterFilesWithUnknownExtensions子键的值改为1。之后就可以搜索到php文件里面的内容了。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/09/horse-with-the-right-hind-foot-in-whit" title="骧">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2009/10/my-first-php-program" title="平生第一个PHP程序">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '62 http://yixuan.github.com/?p=62';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>01 October 2009</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#PHP-ref">PHP <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#WinXP-ref">WinXP <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#WordPress-ref">WordPress <span>7</span></a></li>
+     
+    	<li><a href="/tags.html#包含文字-ref">包含文字 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#搜索-ref">搜索 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

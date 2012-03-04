@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>折腾网站的好方法——XAMPP</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>折腾网站的好方法——XAMPP</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>刚刚学习WordPress少不了一番折腾，不过经常遇到的一个麻烦是担心不当的修改会破坏原有的网页。一个可选的做法是用一个备份镜像做测试，不过在网络上操作毕竟有些不便，比如用FTP传输文件有时候还是挺麻烦的。</p>
+
+<p>前段时间在<a href='http://fairyfish.net/2007/06/25/installing-wordpress-locally/'>一个网站</a>上看到一种方法是在本地安装一个网页服务器，然后把网站的所有文件都放到本地机上，通过网页服务器软件就可以在浏览器中访问这些内容。这样的好处就是在本地修改文件，就能在浏览器中及时看到修改的结果，无需再通过FTP进行增删改操作。</p>
+
+<p>实现的办法就是下载一个名叫XAMPP的软件，网址是<a href='http://www.apachefriends.org/zh_cn/xampp.html'>http://www.apachefriends.org/zh_cn/xampp.html</a>，之前那个网站上也有很详细的说明。我是在Ubuntu下用的，软件的官网也有安装步骤，基本上就是直接解压就行，不需要编译安装，非常方便。唯一要注意的是，在Linux下按照提示提示运行程序可能会提示下面的错误：</p>
+
+<pre><code>Syntax error: &quot;(&quot; unexpected</code></pre>
+
+<p>出现这种情况时，只需要找到XAMPP安装的目录，打开lampp这个文件，把第一行的</p>
+
+<pre><code>#!/bin/sh</code></pre>
+
+<p>改成</p>
+
+<pre><code>#!/bin/bash</code></pre>
+
+<p>就可以了。</p>
+
+<p>之后把网站文件塞到/opt/lampp（或其它的安装目录）/htdocs中就行了，比如就是wordpress文件夹。运行启动服务的命令后，在浏览器中输入http://localhost/wordpress（对应于放进去的文件夹名）就可以在本地安装、测试和折腾WordPress了。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/09/preface" title="前言">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2009/09/you-can-click-on-them" title="这个可以点">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '23 http://yixuan.github.com/?p=23';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>26 September 2009</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#WordPress-ref">WordPress <span>7</span></a></li>
+     
+    	<li><a href="/tags.html#XAMPP-ref">XAMPP <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#本地安装-ref">本地安装 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#网页服务器-ref">网页服务器 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>R的原生并行2——修改BLAS</title>
+    
+    <meta name="author" content="yixuan">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">怡然轩</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/guest.html">留言板</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/pages.html">页面</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/about.html">关于</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/archive.html">归档</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">分类</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/english.html">English</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">标签</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>R的原生并行2——修改BLAS</h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>BLAS的全称是Basic Linear Algebra Subprograms，它是用FORTRAN语言编写的一套跟线性代数运算有关的函数，包括向量与向量的运算、向量与矩阵的运算以及矩阵与矩阵的运算三个层次。R的很多底层运算都是基于BLAS来完成的，比如常见的<code>%*%</code>，用来完成矩阵的乘法。而要让R支持原生的并行计算，一个很重要的方面就是让BLAS本身可以通过并行计算来完成。幸运的是，BLAS中很多运算都是比较规整的循环语句，而这些语句恰恰可以通过OpenMP来实现并行。由于BLAS中的函数非常多，在此为了简便起见，我只修改了其中的dgemm.f文件，该文件主要是实现矩阵乘法运算。下面是我用修改后的BLAS源代码编译出的Rblas.dll文件，用它替换R的bin目录下的Rblas.dll（同时需要把压缩包中其它两个dll文件也复制到bin目录下），就可以对R的并行矩阵运算进行测试（注：程序的有效性可能会受CPU型号和架构的影响）。当然了，说是说修改源代码，其实就是参照<a href='http://rajorshi.net/blog/2009/05/programming-for-multicore-introduction-openmp-gcc/'>这篇文章</a>对一些循环语句进行了并行化的声明。</p>
+
+<p><span>notice type=download</span>下载：<a href='../wp-content/uploads/2010/09/Rblas_OpenMP.zip'>Rblas.dll</a><span>/notice</span></p>
+
+<p>其中dgemm.f是修改后的程序，完整的BLAS源代码可以到<a href='http://www.netlib.org/blas/blas.tgz'>这里</a>下载。</p>
+
+<p>下面是我电脑上的一些测试。 测试环境：</p>
+
+<p>* 操作系统——32位 Windows XP Home Edition SP3</p>
+
+<p>* CPU——Intel Core Duo T2300 1.66GHz（双核）</p>
+
+<p>* 内存——1.00GB DDR2</p>
+
+<p>测试程序：</p>
+
+<pre><code>set.seed(123);
+a=matrix(rnorm(4000000),2000);
+system.time(a%*%a);</code></pre>
+
+<p>测试结果：</p>
+
+<p>1. 用R自带的Rblas.dll：</p>
+
+<pre><code>&gt; system.time(a%*%a);
+  用户  系统   流逝
+25.97  0.05 26.05</code></pre>
+
+<p>2. 用附件中的Rblas.dll：</p>
+
+<pre><code>&gt; system.time(a%*%a);
+  用户  系统   流逝
+32.76  0.06 16.85</code></pre>
+
+<p>3. 用<a href='http://ftp.ctex.org/mirrors/CRAN/bin/windows/contrib/ATLAS/'>ATLAS优化的Rblas.dll</a>：</p>
+
+<pre><code>&gt; system.time(a%*%a);
+  用户  系统   流逝
+11.46  0.01 11.50</code></pre>
+
+<p>其中第一项和第三项测试CPU都只能使用单核。</p>
+
+<p>从结果可以看出，并行计算的时间几乎比一般的串行计算少了一半，但因为程序没有经过优化，所以还不如ATLAS优化过的BLAS。但是，如果CPU核的数量很多，ATLAS优化的BLAS依然只能使用一个核，性能将不会有明显的提升，但并行的BLAS则可以进一步提高性能。</p>
+
+<p>如果要进一步实现R的并行计算功能，我觉得有两方面的工作要做，一是将BLAS中的其它函数都进行相应的修改，而是将并行与ATLAS优化结合起来，进一步提高运算效率。</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2010/09/the-road-to-paralleled-r-1-a-first-trial" title="R的原生并行——一个尝试">&larr; 前一篇</a></li>
+      
+        <li><a href="/archive.html">文章归档</a></li>
+      
+        <li class="next"><a href="/2010/09/r-script-editor-supporting-autocompletion-in-linux-scite" title="Linux下支持自动完成的R编辑器——SciTE">后一篇 &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    var disqus_identifier = '423 http://yixuan.github.com/?p=423';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>发布时间</h4>
+    <div class="date"><p><span>18 September 2010</span></p></div>
+
+  
+    <h4>标签</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#ATLAS-ref">ATLAS <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#BLAS-ref">BLAS <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#R-ref">R <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#并行-ref">并行 <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#测试-ref">测试 <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#源代码-ref">源代码 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; yixuan 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
