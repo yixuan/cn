@@ -8,4 +8,4 @@ wordpress_id: '627'
 group: navigation
 ---
 
-Click [here](http://yixuan.cos.name/en) to visit my English site.
+Click [here](http://statr.me) to visit my English site.
