@@ -14,8 +14,8 @@ tags:
 
 又是一段时间没更新博客，今天拿刚编的R版扫雷凑个数。跟上一版本相比，主要是改进了用户界面，数字的大小可以根据格子的大小自动调整。
 
-[caption id="attachment_564" align="aligncenter" width="538" caption="Ubuntu下的扫雷"][![](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_Ubuntu.png)](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_Ubuntu.png)[/caption]
+[![Ubuntu下的扫雷](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_Ubuntu.png)](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_Ubuntu.png)
 
-[caption id="attachment_570" align="aligncenter" width="451" caption="Windows下的扫雷"][![](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_windows.png)](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_windows.png)[/caption]
+[![Windows下的扫雷](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_windows.png)](http://yixuan.cos.name/cn/wp-content/uploads/2011/08/mine_sweeper_windows.png)
 
 fun包的源代码在[https://github.com/yihui/fun](https://github.com/yihui/fun)。

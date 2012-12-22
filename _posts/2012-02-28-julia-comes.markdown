@@ -22,7 +22,7 @@ tags:
 > ## _In short, because we are greedy._
 
 
-今天看到一篇文章，是[介绍一门编程语言Julia的](http://sd.csdn.net/a/20120223/312315.html)。文章底下的评论有些扎眼，建议移步看它的[英文原文](http://julialang.org/blog/2012/02/why-we-created-julia/)。文章的作者，同时也是这门语言的创始人之一，[Stefan Karpinski](http://karpinski.org/)，目前是加州大学圣踏芭芭拉分校的一名博士生，但曾经在若干家企业工作过。他自称是一名数据科学家和应用数学家，最近发表的一篇论文题目叫作_Non-Parametric Discrete Mixture Model Recovery via NNMF_。看到这里我隐约感觉到，这门语言有可能是我感兴趣的。
+今天看到一篇文章，是[介绍一门编程语言Julia的](http://sd.csdn.net/a/20120223/312315.html)。文章底下的评论有些扎眼，建议移步看它的[英文原文](http://julialang.org/blog/2012/02/why-we-created-julia/)。文章的作者，同时也是这门语言的创始人之一，[Stefan Karpinski](http://karpinski.org/)，目前是加州大学圣踏芭芭拉分校的一名博士生，但曾经在若干家企业工作过。他自称是一名数据科学家和应用数学家，最近发表的一篇论文题目叫作*Non-Parametric Discrete Mixture Model Recovery via NNMF*。看到这里我隐约感觉到，这门语言有可能是我感兴趣的。
 
 为什么又来了一种语言？作者给出的回答就是第一段的那句话——因为我们贪得无厌。我们想要C的速度，想要Python的通用性，想要R的统计，想要Matlab的代数运算，想要很多很多以及更多。Julia是否能成为这样的一门编程语言我目前还无法预知，但它目前的一些特性确实让我眼前一亮。
 
@@ -50,23 +50,21 @@ Julia:
 与之等价的R程序是
 
 R:
-
-    
-    fun1r = function() {
-        m = matrix(0, 1000, 1000)
-        s = 0
-        for(i in 1:1000)
-        {
-            for(j in 1:1000)
-            {
-                m[i, j] = runif(1)
-                s = s + m[i, j]
-            }
+{% highlight r %}
+fun1r = function() {
+    m = matrix(0, 1000, 1000)
+    s = 0
+    for(i in 1:1000)
+    {
+        for(j in 1:1000)
+        {
+            m[i, j] = runif(1)
+            s = s + m[i, j]
         }
-        s
     }
-
-
+    s
+}
+{% endhighlight %}
 
 
 ### 速度
@@ -75,12 +73,11 @@ R:
 速度应该是所有的编程语言都要考虑的内容。我们都知道R的痛点在哪儿，像上面的这个R程序照常理是要挨板子的，但我们还是看看它的运行时间。在我的电脑上（就不贴硬件参数了），运行时间大概为：
 
 R:
-
-    
-    > system.time(fun1r())
-      用户  系统   流逝
-    5.769 0.004 5.782
-
+{% highlight r %}
+> system.time(fun1r())
+  用户  系统   流逝
+5.769 0.004 5.782
+{% endhighlight %}
 
 然后在Julia中，
 
@@ -96,17 +93,16 @@ Julia:
 但这并不是一次有意义的对比，因为上述过程是可以被向量化的。我们用R来把这段程序优化一下：
 
 R:
+{% highlight r %}
+fun1optr = function() {
+    m = matrix(runif(1000 * 1000), 1000, 1000)
+    sum(m)
+}
 
-    
-    fun1optr = function() {
-        m = matrix(runif(1000 * 1000), 1000, 1000)
-        sum(m)
-    }
-    
-    > system.time(fun1opt())
-      用户  系统   流逝
-    0.048 0.000 0.051
-
+> system.time(fun1opt())
+  用户  系统   流逝
+0.048 0.000 0.051
+{% endhighlight %}
 
 同样地，Julia也进行改写：
 

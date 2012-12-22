@@ -17,17 +17,12 @@ tags:
 
 你在用R画图的时候，是否会遇到以下的麻烦：
 
-
-
 	
   * 加图例或文字时总是对不准坐标，要花很多精力调整元素的位置；
-
 	
   * 某个细节出错，整幅图得重新绘制；
-
 	
   * 想要更酷的平移、拉伸、旋转操作，就好像在Gimp或Photoshop里面一样；
-
 	
   * 想更方便地使用字体，特别是中文的显示。
 
@@ -38,14 +33,14 @@ Layer顾名思义，指的是图层，而这个绘图设备正是采用了图层
 
 为了让大家能直观地感受Layer的操作，下面给出了一段Layer的操作演示视频。
 
-
+<p><center><embed src="http://player.youku.com/player.php/sid/XMzAzNDkyNTU2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></center></p>
 
 此外，Layer有着更方便的字体支持。在打开Layer图形设备时，你可以指定一个ttf字体文件作为图形字体的来源，如果参数为`NULL`，则图形会使用软件包自带的[文泉驿](http://wenq.org)微米黑字体。
 
 Layer软件包的下载地址如下。需要说明的是，Layer需要GTK+环境的支持，对于Windows用户，如果你已经安装了GTK+环境，请选择第二个下载地址；如果尚未安装，可以直接下载第三个文件（软件包中附带了GTK+）。
 
-[notice type=download][源代码](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.tar.gz)[/notice]
+[源代码](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.tar.gz)
 
-[notice type=download][Windows二进制包](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.zip)[/notice]
+[Windows二进制包](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.zip)
 
-[notice type=download][Windows二进制包（含GTK+运行库）](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer.zip)[/notice] 
+[Windows二进制包（含GTK+运行库）](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer.zip)

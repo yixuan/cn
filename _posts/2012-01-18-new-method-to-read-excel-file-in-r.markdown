@@ -23,47 +23,47 @@ tags:
 
 除了基本的读写操作之外，如之前所说，xlsx包还能进行格式方面的设置。下面是一个简单的例子，说明了如何创建工作簿和工作表，如何操作单元格等。感兴趣的朋友不妨运行一下下面的例子，看看最终的效果。
 
-    
-    ind = read.table(url("http://yixuan.cos.name/cn/wp-content/uploads/2012/01/ind.txt"),
-                     sep = "\t");
-    
-    library(xlsx);
-    # Create a new workbook
-    wb = createWorkbook();
-    # Create a new sheet with a name
-    sheet1 = createSheet(wb, "第一页");
-    # Set the zoom ratio when you open the Excel file
-    setZoom(sheet1, 50, 100);
-    # Set the width of columns
-    setColumnWidth(sheet1, 1:100, 2.8);
-    
-    # Create rows
-    rows = createRow(sheet1, 1:40);
-    # Create cells for each row
-    cells = createCell(rows, 1:73);
-    # Merge the first row into one cell
-    addMergedRegion(sheet1, 1, 1, 1, 73);
-    # Create the style for title cell
-    title_cell_style = CellStyle(wb,
-        alignment = Alignment(horizontal = "ALIGN_CENTER"),
-        font = Font(wb, "blue", 50, isBold = TRUE));
-    # Create the style for black cells
-    black_cell_style = CellStyle(wb,
-        border = Border(),
-        fill = Fill(foregroundColor= "black"));
-    # Get the first row
-    first_row = getRows(sheet1, 1);
-    # Get the title cell from first row
-    title_cell = getCells(first_row, 1)[[1]];
-    # Set the value of the title cell
-    setCellValue(title_cell, "Read/Write Excel!");
-    # Set the style of the title cell
-    setCellStyle(title_cell, title_cell_style);
-    # Set the style of black cells
-    tmp = mapply(function(x, y) setCellStyle(cells[[x, y]], black_cell_style),
-           ind[, 1] + 3, ind[, 2] + 5);
-    # Save the workbook into a file
-    saveWorkbook(wb, "test.xlsx");
+{% highlight r %}
+link = "http://yixuan.cos.name/cn/wp-content/uploads/2012/01/ind.txt";
+ind = read.table(url(link), sep = "\t");
 
+library(xlsx);
+# Create a new workbook
+wb = createWorkbook();
+# Create a new sheet with a name
+sheet1 = createSheet(wb, "第一页");
+# Set the zoom ratio when you open the Excel file
+setZoom(sheet1, 50, 100);
+# Set the width of columns
+setColumnWidth(sheet1, 1:100, 2.8);
+
+# Create rows
+rows = createRow(sheet1, 1:40);
+# Create cells for each row
+cells = createCell(rows, 1:73);
+# Merge the first row into one cell
+addMergedRegion(sheet1, 1, 1, 1, 73);
+# Create the style for title cell
+title_cell_style = CellStyle(wb,
+    alignment = Alignment(horizontal = "ALIGN_CENTER"),
+    font = Font(wb, "blue", 50, isBold = TRUE));
+# Create the style for black cells
+black_cell_style = CellStyle(wb,
+    border = Border(),
+    fill = Fill(foregroundColor= "black"));
+# Get the first row
+first_row = getRows(sheet1, 1);
+# Get the title cell from first row
+title_cell = getCells(first_row, 1)[[1]];
+# Set the value of the title cell
+setCellValue(title_cell, "Read/Write Excel!");
+# Set the style of the title cell
+setCellStyle(title_cell, title_cell_style);
+# Set the style of black cells
+tmp = mapply(function(x, y) setCellStyle(cells[[x, y]], black_cell_style),
+    ind[, 1] + 3, ind[, 2] + 5);
+# Save the workbook into a file
+saveWorkbook(wb, "test.xlsx");
+{% endhighlight %}
 
 总的来说，xlsx包是我目前见过的功能最全的操作Excel的R包，它只依赖于Java环境和rJava、xlsxjars两个包，在多种平台下都能运行，局限是写操作只支持Excel 2007格式（*.xlsx），对于机器上只有MS Office 2003的人来说可能会有些不便。（LibreOffice和OpenOffice.org都可以打开Excel 2007文件）

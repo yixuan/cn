@@ -22,35 +22,36 @@ tags:
 
 代码：
 
-    
-    l = scan("Ci.txt", "character", sep = "\n");
-    l.len = nchar(l);
-    
-    # 某些行是作者和标题，所以选取长度大于10的行；
-    # 另外这个文本文件不太规整，有些网址什么的，
-    # 所以也要排除那些长度太长的。
-    ci = l[l.len > 10 & l.len < 500];
-    
-    # 句子用标点符号分割。
-    sentences = strsplit(ci, "，|。|！|？|、");
-    sentences = unlist(sentences);
-    sentences = sentences[sentences != ""];
-    s.len = nchar(sentences);
-    
-    # 单句太长了说明有可能是错误的字符，去除掉。
-    sentences = sentences[s.len <= 10];
-    s.len = nchar(sentences);
-    
-    # 暴力挨个拆分，比如“犹解嫁东风”的所有二字组合为
-    # “犹解”“解嫁”“嫁东”“东风”，
-    # 无意义的词其频数自然就落在后面了。
-    splitwords = function(x, x.len) substring(x, 1:(x.len - 1), 2:x.len);
-    
-    words = mapply(splitwords, sentences, s.len, SIMPLIFY = TRUE, USE.NAMES = FALSE);
-    words = unlist(words);
-    words.freq = table(words);
-    words.freq = sort(words.freq, decreasing = TRUE);
-    data.frame(Word = names(words.freq[1:100]), Freq = as.integer(words.freq[1:100]));
+{% highlight r %}
+l = scan("Ci.txt", "character", sep = "\n");
+l.len = nchar(l);
+
+# 某些行是作者和标题，所以选取长度大于10的行；
+# 另外这个文本文件不太规整，有些网址什么的，
+# 所以也要排除那些长度太长的。
+ci = l[l.len > 10 & l.len < 500];
+
+# 句子用标点符号分割。
+sentences = strsplit(ci, "，|。|！|？|、");
+sentences = unlist(sentences);
+sentences = sentences[sentences != ""];
+s.len = nchar(sentences);
+
+# 单句太长了说明有可能是错误的字符，去除掉。
+sentences = sentences[s.len <= 10];
+s.len = nchar(sentences);
+
+# 暴力挨个拆分，比如“犹解嫁东风”的所有二字组合为
+# “犹解”“解嫁”“嫁东”“东风”，
+# 无意义的词其频数自然就落在后面了。
+splitwords = function(x, x.len) substring(x, 1:(x.len - 1), 2:x.len);
+
+words = mapply(splitwords, sentences, s.len, SIMPLIFY = TRUE, USE.NAMES = FALSE);
+words = unlist(words);
+words.freq = table(words);
+words.freq = sort(words.freq, decreasing = TRUE);
+data.frame(Word = names(words.freq[1:100]), Freq = as.integer(words.freq[1:100]));
+{% endhighlight %}
 
 
 结果（排在第一的是无效字符，这跟数据源有关）：
