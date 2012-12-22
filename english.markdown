@@ -1,6 +1,6 @@
 ---
 date: '2011-10-02 20:00:52'
-layout: page
+layout: page_no_comment
 slug: english
 status: publish
 title: English

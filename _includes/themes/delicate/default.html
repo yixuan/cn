@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    {% if page.tagline %}
+    <title>{{ page.title }} | {{ page.tagline }}</title>
+    {% else %}
+    <title>{{ page.title }}</title>
+    {% endif %}
+    <link rel="stylesheet" id="default-css" href="{{ ASSET_PATH }}/css/style.css" type="text/css" media="all">
+    <!--[if IE 7]>
+    <link rel='stylesheet' id='delicate-ie7-css'  href='{{ ASSET_PATH }}/css/ie7.css' type='text/css' media='all' />
+    <![endif]-->
+    <!--[if IE 6]>
+    <link rel='stylesheet' id='delicate-ie6-css'  href='{{ ASSET_PATH }}/css/ie6.css' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.cycle.all.min.js"></script>
+
+    <style type="text/css">
+	  .topnav a {
+	   	font-size: 17px;
+	  }
+	  .topnav a {
+		color: #454545;
+	  }
+	  .topnav a:hover, .topnav ul.children > li > a:hover, .topnav ul.children > li > a:hover span {
+		color: #ff0505;
+	  }
+	  body {
+		font-size: 14px;
+	  }
+	  .post {
+		color: #4D4D4F;
+	  }
+	  .post a {
+		color: #0E73B8;
+	  }
+	  .post a:hover {
+		color: #ff0505;
+	  }
+	  #sidebar h2 {
+		color: #454547;
+	  }
+	  #sidebar li.widget {
+		color: #777777;
+	  }
+	  #sidebar li.widget a {
+		color: #3D3D3F;
+	  }
+	  #sidebar li.widget a:hover {
+		color: #0E73B8;
+	  }
+    </style>
+    <!--[if IE 6]>
+    <style type="text/css">
+            img.png {
+            filter: expression(
+            (runtimeStyle.filter == '') ? runtimeStyle.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+src+', sizingMethod=scale)' : '',
+            width = width,
+            src = '{{ ASSET_PATH }}/images/px.gif');
+    }
+    </style>
+    <![endif]-->
+	<style type="text/css">
+        .head-img .tagline { display:none; }
+        .content-pad, .slideshow-bg .slideshow, .slideshow-bg .slideshow > div, .head-img img { width: 950px; }
+	</style>
+	
+	<!-- Highlight support -->
+    <link href="{{ ASSET_PATH }}/css/highlight.css" rel="stylesheet">
+    
+    <!-- MathJax support -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!-- Google Custom Search -->
+    <script>
+      (function() {
+        var cx = '005512552974801634858:xtncfmg2jaq';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+      })();
+   </script>
+    
+  </head>
+
+<body class="single single-post postid-712 single-format-standard">
+  <div class="content-pad">
+    <div id="header">
+      <div id="logo"><a href="{{ HOME_PATH }}">
+        <img src="{{ ASSET_PATH }}/images/logo/logo.png" border="0" class="png" alt="怡然轩"></a>
+      </div>
+    </div>
+
+    <div class="top">
+      <div id="menu">	
+        <ul id="nav-ie" class="topnav fl fr sf-js-enabled sf-shadow">
+          <li class="page_item"><a href="{{ HOME_PATH }}" title="Home">主页</a></li>
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul>
+      </div>                
+    </div> <!-- END top -->
+    
+    <div class="clear"></div>
+    <div class="head-img">
+      <div class="slideshow-bg module">
+        <div class="slideshow">
+          <div>
+            <div class="tagline">Welcome to Delicate template</div>
+            <img src="{{ ASSET_PATH }}/images/header/header.jpg" alt="Header">
+          </div>
+          <div>
+            <div class="tagline">Just another WordPress site</div>
+            <img src="{{ ASSET_PATH }}/images/header/headers.jpg" alt="Header">
+          </div>  
+        </div><!-- END Slideshow -->
+        <div id="slideshow-nav"></div>
+      </div><!-- END slideshow-bg -->
+    </div><!-- END Header -->
+    
+    <div id="main">		
+	  <div class="columns">	
+        <div class="narrowcolumn singlepage no">
+          {{ content }}
+	    </div><!-- END Narrowcolumn -->
+
+        <div id="sidebar" class="profile no">
+          <ul>
+            <li id="widget_search" class="widget png_scale">
+              <gcse:searchbox-only></gcse:searchbox-only>
+              <div style="clear:both;"></div>
+            </li> 
+            
+            <li id="widget_categories" class="widget png_scale">
+              <h2 class="blocktitle"><span>分类目录</span></h2>
+                <ul>
+                  {% for category in site.categories %} 
+    	          <li class="cat-item"><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
+    		          {{ category[0] | join: "/" }}</a></li>
+                  {% endfor %}
+		        </ul>
+            </li>
+            
+            <li id="linkcat-1" class="widget png_scale">
+              <h2 class="blocktitle"><span>推荐链接</span></h2>
+                <ul class='xoxo blogroll'>
+                  <li><a href="http://cos.name/" title="正直、专业的统计学网站">统计之都</a> 正直、专业的统计学网站</li>
+                </ul>
+              </h2>
+            </li>
+
+            <li id="linkcat-2" class="widget png_scale">
+              <h2 class="blocktitle"><span>良师益友</span></h2>
+                <ul class='xoxo blogroll'>
+                  <li><a href="http://yihui.name/" title="neaRly god">谢老大</a> neaRly god</li>
+                  <li><a href="http://www.bjt.name/" title="R+数据挖掘">bjt</a> R+数据挖掘</li>
+                  <li><a href="http://yanping.me/" title="文艺技术青年">ypchen</a> 文艺技术青年</li>
+                  <li><a href="http://blog.cos.name/fan/" title="有范儿:)">范师兄</a> 有范儿:)</li>
+                  <li><a href="http://blog.cos.name/taiyun/" title="一片祥云">太云</a> 一片祥云</li>
+                  <li><a href="http://www.cloudlychen.net/" title="Economics!">cloudly</a> Economics!</li>
+                  <li><a href="http://dreamhunter.me/cn/" title="Dream Hunter">Weicheng</a> Dream Hunter</li>
+                  <li><a href="http://yanlinlin82.vicp.net/blog/" title="Computer itself is entertainment">yanlinlin</a> Computer itself is entertainment</li>
+                  <li><a href="http://www.road2stat.com/" title="promising[0]">肖楠</a> promising[0]</li>
+                  <li><a href="http://www.gaotao.name/" title="promising[1]">高涛</a> promising[1]</li>
+                  <li><a href="http://www.cheneylee.com/" title="promising[2]">李程</a> promising[2]</li>
+                  <li><a href="http://yishuo.cos.name/" title="Quantminds, Literature and Fantasy">一硕</a> Quantminds, Literature and Fantasy</li>
+                  <li><a href="http://blog.sina.com.cn/cattyguan" title="如其名">关菁菁</a> 如其名</li>
+                  <li><a href="http://www.blog496.org/" title="同窗">晓伟</a> 同窗</li>
+                </ul>
+            </li>
+            
+            <li id="linkcat-1" class="widget png_scale">
+              <h2 class="blocktitle"><span>相逢何必曾相识</span></h2>
+                <ul class='xoxo blogroll'>
+                  <li><a href="http://ichov.com/" title="奋斗，一个人的江湖">打渔樵夫</a> 奋斗，一个人的江湖</li>
+                </ul>
+              </h2>
+            </li>
+            
+          </ul>
+        </div><!-- END sidebar -->
+
+        <div class="clear"></div>
+        
+        <div id="footer">
+          <div class="lt">
+            版权所有 © 2012 怡然轩 | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="http://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
+          </div>
+
+          <div class="rt">主题修改自 <a href="http://wordpress.org/extend/themes/delicate" title="delicate" rel="copyright">delicate</a> <a href="http://www.nattywp.com/" title="NattyWP"><img src="{{ ASSET_PATH }}/images/natty-logo.png" width="82" height="17" valign="3px" class="png" alt="NattyWP" align="middle"></a>
+          </div>		
+          
+          <div class="clear"></div>
+        </div><!-- END footer -->
+
+      </div> <!-- END Columns --> 
+    </div><!-- END main -->
+  </div><!-- END content-pad -->
+  
+  <div class="clear"></div>
+
+<script type="text/javascript" charset="utf-8">/*<![CDATA[*/ 
+    jQuery(document).ready(function() {
+        jQuery(".slideshow").cycle({
+          fx: "fade",
+          timeout: 6000,
+          pager: "#slideshow-nav",
+          speed: 1000,
+          pagerEvent: "click",
+          pauseOnPagerHover: true,
+          cleartypeNoBg: true });						
+      });
+      /*]]>*/</script>   
+</body>
+</html>

@@ -5,15 +5,16 @@ permalink: /:year/:month/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
+markdown: kramdown
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title : 怡然轩
-tagline: Site Tagline
+tagline: 平生书癖已无恙，解名疆，更逃羁网
 author :
   name : yixuan
-  email : yixuan.qiu@cos.name
+  email : yixuanq@gmail.com
   github : yixuan
   twitter : username
   feedburner : feedname
@@ -56,6 +57,7 @@ JB :
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
   BASE_PATH : http://yixuan.github.com/cn
+  #BASE_PATH : false
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -81,7 +83,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : joyfulhomecn
     livefyre :
       site_id : 123
     intensedebate :
@@ -123,4 +125,7 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+  
+  pages_list :
+    provider : "custom"
   

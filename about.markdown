@@ -1,6 +1,6 @@
 ---
 date: '2009-09-27 12:42:31'
-layout: page
+layout: page_no_comment
 slug: about
 status: publish
 title: 关于

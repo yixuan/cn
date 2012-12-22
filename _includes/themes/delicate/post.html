@@ -1,0 +1,33 @@
+<div class="post type-post status-publish format-standard hentry">
+  <div class="title">
+    <h2>{{ page.title }}</h2>
+    {% if page.date %}
+    <small>{{ page.date | date: "%Y 年 %m 月 %d 日" }} | 分类于
+    {% else %}
+    <small>某年 某月 某日 | 分类于
+    {% endif %}
+    {% for category in page.categories %}
+    <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref" title="{{ category }}" rel="category">{{ category }}</a>{% unless forloop.last %}，{% endunless %}
+    {% endfor %}
+    </small>
+  </div><!-- END title -->
+			
+  <div class="entry">
+    {{ content }}
+    <div class="clear"></div>
+  </div><!-- END entry -->         
+                
+  <p class="postmetadata">
+    <span class="category">
+      {% for tag in page.tags %}
+      <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref"" rel="tag">{{ tag }}</a>
+      {% endfor %}
+    </span>
+  </p>
+        
+  <p><small>订阅 <a href="http://joyfulhomecn.disqus.com/latest.rss">评论RSS</a></small>
+  </p>
+  
+  {% include JB/comments %}
+
+</div><!-- END post -->

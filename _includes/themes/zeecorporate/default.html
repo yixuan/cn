@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- HTML 5 -->
+<html dir="ltr" lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  {% if page.tagline %}
+  <title>{{ page.title }} | {{ page.tagline }}</title>
+  {% else %}
+  <title>{{ page.title }}</title>
+  {% endif %}
+  
+  <link rel="stylesheet" id="zee_stylesheet-css" href="{{ ASSET_PATH }}/css/style.css" type="text/css" media="all">
+
+  <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery_002.js"></script>
+  <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.js"></script>
+
+  <script type="text/javascript">
+  //<![CDATA[
+  jQuery(document).ready(function($) {
+      $('#nav ul').css({display: 'none'}); // Opera Fix
+      $('#nav li').hover(function(){
+                             $(this).find('ul:first').css({visibility: 'visible',display: 'none'}).slideDown(350);
+                         },
+                         function(){
+                             $(this).find('ul:first').css({visibility: 'hidden'});
+                        });
+                        
+      $('#topnav ul').css({display: 'none'}); // Opera Fix
+      $('#topnav li').hover(function(){
+                                $(this).find('ul:first').css({visibility: 'visible',display: 'none'}).slideDown(350);
+                            },
+                            function(){
+                                $(this).find('ul:first').css({visibility: 'hidden'});
+                            });
+                                     });
+  //]]>
+  </script>
+
+  <style type="text/css">
+    .recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+  </style>
+  
+    <!-- Highlight support -->
+    <link href="{{ ASSET_PATH }}/css/highlight.css" rel="stylesheet">
+    
+    <!-- MathJax support -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+        });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+    <script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+{% include JB/analytics %}
+</head>
+
+<body class="page page-id-2 page-template-default">
+  <div id="wrapper">
+
+    <div id="header">
+      <div id="navi">
+        <ul id="nav" class="menu">
+          <li class="page_item"><a href="{{ HOME_PATH }}" title="Home">主页</a></li>
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul><!-- #nav -->
+      </div><!-- #navi -->
+    </div><!-- header -->
+
+    <div class="clear"></div>
+    
+    <div id="custom_header">
+      <img src="{{ ASSET_PATH }}/images/header.jpg">
+    </div>
+        
+    <div id="wrap">
+      <div id="content">
+      {{ content }}
+      </div><!-- content -->
+
+      <div id="sidebar">
+        <ul>
+
+          <!-- Search -->
+          <li id="search-2" class="widget widget_search">
+            <form role="search" method="get" id="searchform" action="http://localhost/wp/">
+              <div>
+                <label class="screen-reader-text" for="s">搜索：</label>
+                <input name="s" id="s" type="text">
+                <input id="searchsubmit" value="搜索" type="submit">
+              </div>
+            </form>
+          </li>
+
+          <!-- Link -->
+          <li id="link-1" class="widget">
+            <h2 class="widgettitle">推荐链接</h2>
+            <ul>
+                <li><a href="http://cos.name/" title="正直、专业的统计学网站">统计之都</a> 正直、专业的统计学网站</li>
+            </ul>
+          </li>
+          
+          <!-- Link -->
+          <li id="link-2" class="widget">
+            <h2 class="widgettitle">良师益友</h2>
+            <ul>
+                <li><a href="http://yihui.name/" title="neaRly god">谢老大</a> neaRly god</li>
+                <li><a href="http://www.bjt.name/" title="R+数据挖掘">bjt</a> R+数据挖掘</li>
+                <li><a href="http://yanping.me/" title="文艺技术青年">ypchen</a> 文艺技术青年</li>
+                <li><a href="http://blog.cos.name/fan/" title="有范儿:)">范师兄</a> 有范儿:)</li>
+                <li><a href="http://blog.cos.name/taiyun/" title="一片祥云">太云</a> 一片祥云</li>
+                <li><a href="http://www.cloudlychen.net/" title="Economics!">cloudly</a> Economics!</li>
+                <li><a href="http://dreamhunter.me/cn/" title="Dream Hunter">Weicheng</a> Dream Hunter</li>
+                <li><a href="http://yanlinlin82.vicp.net/blog/" title="Computer itself is entertainment">yanlinlin</a> Computer itself is entertainment</li>
+                <li><a href="http://www.road2stat.com/" title="promising[0]">肖楠</a> promising[0]</li>
+                <li><a href="http://www.gaotao.name/" title="promising[1]">高涛</a> promising[1]</li>
+                <li><a href="http://www.cheneylee.com/" title="promising[2]">李程</a> promising[2]</li>
+                <li><a href="http://yishuo.cos.name/" title="Quantminds, Literature and Fantasy">一硕</a> Quantminds, Literature and Fantasy</li>
+                <li><a href="http://blog.sina.com.cn/cattyguan" title="如其名">关菁菁</a> 如其名</li>
+                <li><a href="http://www.blog496.org/" title="同窗">晓伟</a> 同窗</li>
+            </ul>
+          </li>
+          
+          <!-- Link -->
+          <li id="link-3" class="widget">
+            <h2 class="widgettitle">相逢何必曾相识</h2>
+            <ul>
+                <li><a href="http://ichov.com/" title="奋斗，一个人的江湖">打渔樵夫</a> 奋斗，一个人的江湖</li>
+            </ul>
+          </li>
+          
+          <!-- Categories -->
+          <li id="categories-2" class="widget widget_categories"><h2 class="widgettitle">分类目录</h2>
+            <ul>
+              <li class="cat-item cat-item-3"><a href="http://localhost/wp/?cat=3" title="查看 Blog 下的所有文章">Blog</a></li>
+              <li class="cat-item cat-item-4"><a href="http://localhost/wp/?cat=4" title="查看 R 下的所有文章">R</a></li>
+              <li class="cat-item cat-item-5"><a href="http://localhost/wp/?cat=5" title="查看 学习中 下的所有文章">学习中</a></li>
+              <li class="cat-item cat-item-7"><a href="http://localhost/wp/?cat=7" title="查看 生活 下的所有文章">生活</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div><!-- sidebar -->
+
+    </div><!-- content -->
+    
+    <div class="clear"></div>
+        
+    <div id="footer">
+      版权所有 © 2012 怡然轩 | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="http://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
+      <div class="credit_link">
+        主题修改自 <a href="http://wordpress.org/extend/themes/zeecorporate" title="zeeCorporate" rel="copyright">zeeCorporate</a>
+      </div>
+    
+      <div class="clear"></div>
+    
+    </div><!-- footer -->
+
+  </div><!-- wrapper -->
+    
+</body>
+</html>
