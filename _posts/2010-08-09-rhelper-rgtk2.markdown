@@ -16,7 +16,7 @@ tags:
 - 帮助
 ---
 
-寒假的时候用wxWidgets程序库写过一个[Rhelper小程序](http://yixuan.cos.name/cn/2010/01/please-help-me-test-a-program-rhelper/)，初衷是在chm类型的帮助文档被取消后，能提供一个类似的查看帮助的环境。当时编的那个程序基本实现了这一目标，但它有两个比较大的缺点：一是程序与R相脱离，调用起来不方便；二是程序只能在Windows下运行，对操作系统有依赖。由于当时能力和时间有限，所以也就没再多加考虑。
+寒假的时候用wxWidgets程序库写过一个[Rhelper小程序](http://localhost:4000/2010/01/please-help-me-test-a-program-rhelper/)，初衷是在chm类型的帮助文档被取消后，能提供一个类似的查看帮助的环境。当时编的那个程序基本实现了这一目标，但它有两个比较大的缺点：一是程序与R相脱离，调用起来不方便；二是程序只能在Windows下运行，对操作系统有依赖。由于当时能力和时间有限，所以也就没再多加考虑。
 
 之后，从谢老大那里得知了有gWidgets包的存在，顿时兴奋不已，因为这个包可以用简单的语句生成一系列的图形界面，而且不依赖于操作系统，甚至不依赖于图形界面库（GTK+，Java，tcl/tk等）。谢老大也以这个包为主题在[第三届中国R语言会议](http://cos.name/2010/06/3rd-china-r-beijing-summary/)上做了[报告](http://yihui.name/cn/wp-content/uploads/2010/06/3rd-ChinaR-gWidgets-Yihui-Xie.pdf)。
 
@@ -24,12 +24,14 @@ tags:
 
 由于RGtk2包没有直接解析HTML的控件，所以文档的格式化成了程序中最大的一个难题。目前我是直接从Rd文档中获取文字和相应的标签，然后对不同的标签应用不同的格式。下面是两张效果图，分别是Windows下和Ubuntu下的运行界面：
 
-[caption id="attachment_403" align="aligncenter" width="484" caption="Windows下运行界面"][![](http://yixuan.cos.name/cn/wp-content/uploads/2010/08/Rhelper-RGtk2_Windows.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/08/Rhelper-RGtk2_Windows.png)[/caption]
+<p style="text-align: center;">Windows下运行界面</p>
+[![](http://i.imgur.com/Ng6l2.png)](http://i.imgur.com/Ng6l2.png.png)
 
-[caption id="attachment_404" align="aligncenter" width="482" caption="Ubuntu下运行界面"][![](http://yixuan.cos.name/cn/wp-content/uploads/2010/08/Rhelper-RGtk2_Ubuntu.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/08/Rhelper-RGtk2_Ubuntu.png)[/caption]
+<p style="text-align: center;">Ubuntu下运行界面</p>
+[![](http://i.imgur.com/pw00E.png)](http://i.imgur.com/pw00E.png)
 
 其中蓝色的链接都是可以点击的（光标不会变成手形），不过目前Rd文档的解析仍然是个大工程，有很多函数的文档会出现格式混乱的现象，这个还需要不断修补。总之这个程序还只是一个初步的框架，很多细节仍有待完善。
 
-[notice type=download]附件：[程序代码下载](../wp-content/uploads/2010/08/Rhelper-RGtk2_dev.txt)[/notice]
+附件：[程序代码下载](https://bitbucket.org/yixuan/cn/downloads/Rhelper-RGtk2_dev.txt)
 
-用的时候输入`Rhelper("&&")`之类的就可以了。
+用的时候输入 `Rhelper("&&")` 之类的就可以了。
