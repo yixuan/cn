@@ -19,19 +19,17 @@ tags:
 
 之前谢老大写了一篇[在Notepad++中配置R函数自动完成的文章](http://yihui.name/en/2010/08/auto-completion-in-notepad-for-r-script/)，甚好甚强大，不过可惜的是Notepad++只能在Windows下用，没有Linux的版本。当然了，Linux下的编辑器也不少，拿Ubuntu来说，简单的有Gedit，高级的有Kate，神级的有Emacs、Vim等等，但本文介绍的SciTE绝对是一款甚小甚强大的编辑器软件。
 
-Ubuntu下安装的方法就不用说了，`sudo apt-get install scite`就可以搞定。软件非常小，但其功能绝对不容小觑，只要你有耐心设置好配置文件，几乎任何一种语言都可以实现语法高亮、代码折叠和自动完成等功能。下面是编辑R脚本时的截图。
+Ubuntu下安装的方法就不用说了，`sudo apt-get install scite` 就可以搞定。软件非常小，但其功能绝对不容小觑，只要你有耐心设置好配置文件，几乎任何一种语言都可以实现语法高亮、代码折叠和自动完成等功能。下面是编辑R脚本时的截图。
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_autocompletion.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_autocompletion.png)
+[![SciTE自动完成](http://i.imgur.com/ppWVe.png)](http://i.imgur.com/ppWVe.png)
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_function_tips.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_function_tips.png)
+[![SciTE函数提示](http://i.imgur.com/CCurr.png)](http://i.imgur.com/CCurr.png)
 
 要实现上面的效果，需要一些额外的配置文件，可以到下面下载。
 
-[notice type=download]下载：[SciTE配置文件](../wp-content/uploads/2010/09/SciTE_config.zip)[/notice]
+下载：[SciTE配置文件](https://bitbucket.org/yixuan/cn/downloads/SciTE_config.zip)
 
 配置方法：
-
-
 
 	
   * 用管理员权限打开/usr/share/scite/SciTEGlobal.properties（具体的位置视系统而定），搜索其中的“import r”语句，将其前面的井号去掉；
@@ -49,7 +47,7 @@ Ubuntu下安装的方法就不用说了，`sudo apt-get install scite`就可以�
 
 
 
-下载：[Windows版SciTE](http://yixuan.cos.name/cn/wp-content/uploads/2010/09/SciTE_win.zip)
+下载：[Windows版SciTE](https://bitbucket.org/yixuan/cn/downloads/SciTE_win.zip)
 
 
 

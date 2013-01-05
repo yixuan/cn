@@ -16,7 +16,7 @@ tags:
 - 帮助
 ---
 
-前两天做了一个稍微有些艰难的决定，把[Rhelper-RGtk2](http://yixuan.cos.name/cn/2010/08/rhelper-rgtk2/)更新了一下。主要更新的地方有：
+前两天做了一个稍微有些艰难的决定，把[Rhelper-RGtk2](http://yixuan.github.com/cn/2010/08/rhelper-rgtk2/)更新了一下。主要更新的地方有：
 
 
 
@@ -45,10 +45,10 @@ tags:
 截图：
 
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper-RGtk2-20101117-300x235.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper-RGtk2-20101117.png)
+[![Rhelper-RGtk2](http://i.imgur.com/hQ3sD.png)](http://i.imgur.com/hQ3sD.png)
 
 
 
-[notice type=download]下载：[Rhelper-RGtk2 2010.11.17更新](http://yixuan.cos.name/cn/wp-content/uploads/2010/11/Rhelper_RGtk2_20101117_uft8.txt)（注：必须在UTF-8编码下打开）[/notice]
+下载：[Rhelper-RGtk2 2010.11.17更新](https://bitbucket.org/yixuan/cn/downloads/Rhelper_RGtk2_20101117_uft8.txt)（注：必须在UTF-8编码下打开）
 
 目前程序还不是特别稳定，暂时仍处于测试状态。

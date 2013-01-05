@@ -40,7 +40,7 @@ tags:
 
 好了，我不想把这篇博文弄得和紧张兮兮的新闻发布会一样，而且我也还远没到那个层次。请大家抬头看一下我博客的域名：cos.name，这个域名是属于[统计之都网站](http://cos.name)的。统计之都（Capital of Statistics）是一个由志愿者团队维护的非赢利网站，旨在推进国内统计学的发展和应用。我目前是统计之都的管理员之一，而在这个团队中还有很多厉害的牛人，比如网站的创始人[谢益辉大师兄](http://yihui.name/cn)。更多的成员可以在网站的[关于页面](http://cos.name/about)中找到，他们中的每一个都有自己擅长的领域，都是很棒的人。
 
-之前大家普遍转载的是我个人博客中的[《东风何处是人间》](http://yixuan.cos.name/cn/2011/03/text-mining-of-song-poems/)，但我其实对数据和结果都进行了一些修订，发在了统计之都网站上，文章的标题是[《统计词话（一）》](http://cos.name/2011/03/statistics-in-chinese-song-poem-1/)。在果壳的帖子里面有朋友对《全唐诗》的词频也感兴趣，而这部分也已经[有网友做过了](http://yixf.name/2011/03/21/%E5%B1%B1%E4%BA%BA%E4%BD%95%E5%A4%84%E5%90%9B%E4%B8%8D%E8%A7%81%EF%BC%9F%E4%B8%9C%E9%A3%8E%E4%B8%80%E8%8A%B1%E5%80%9A%E9%98%91%E5%B9%B2%EF%BC%81-%E2%80%94%E2%80%94%E3%80%8A%E5%85%A8%E5%94%90%E8%AF%97/)，就在[《统计词话（一）》](http://cos.name/2011/03/statistics-in-chinese-song-poem-1/)的评论中，那位网友的博客地址是[http://yixf.name](http://yixf.name)。
+之前大家普遍转载的是我个人博客中的[《东风何处是人间》](http://localhost:4000/2011/03/text-mining-of-song-poems/)，但我其实对数据和结果都进行了一些修订，发在了统计之都网站上，文章的标题是[《统计词话（一）》](http://cos.name/2011/03/statistics-in-chinese-song-poem-1/)。在果壳的帖子里面有朋友对《全唐诗》的词频也感兴趣，而这部分也已经[有网友做过了](http://yixf.name/2011/03/21/%E5%B1%B1%E4%BA%BA%E4%BD%95%E5%A4%84%E5%90%9B%E4%B8%8D%E8%A7%81%EF%BC%9F%E4%B8%9C%E9%A3%8E%E4%B8%80%E8%8A%B1%E5%80%9A%E9%98%91%E5%B9%B2%EF%BC%81-%E2%80%94%E2%80%94%E3%80%8A%E5%85%A8%E5%94%90%E8%AF%97/)，就在[《统计词话（一）》](http://cos.name/2011/03/statistics-in-chinese-song-poem-1/)的评论中，那位网友的博客地址是[http://yixf.name](http://yixf.name)。
 
 统计之都中还有更多有意思的文章，比如[对上帝他老人家的一些思考](http://cos.name/2011/07/we-never-know-randomness/)，以及[yinyin网的社会网络分析](http://cos.name/2011/04/exploring-renren-social-network/)等。《统计词话》在计划中还会有续篇，我会把我一些新的想法继续发在网站上。
 

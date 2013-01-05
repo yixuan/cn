@@ -16,4 +16,4 @@ tags:
 
 纪念那些无忧的岁月。
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2011/10/Rongruo.jpg)](http://yixuan.cos.name/cn/wp-content/uploads/2011/10/Rongruo.jpg)
+[![](http://i.imgur.com/bIlSX.jpg)](http://i.imgur.com/bIlSX.jpg)
