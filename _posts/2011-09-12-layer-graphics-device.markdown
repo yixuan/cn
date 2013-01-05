@@ -39,8 +39,8 @@ Layer顾名思义，指的是图层，而这个绘图设备正是采用了图层
 
 Layer软件包的下载地址如下。需要说明的是，Layer需要GTK+环境的支持，对于Windows用户，如果你已经安装了GTK+环境，请选择第二个下载地址；如果尚未安装，可以直接下载第三个文件（软件包中附带了GTK+）。
 
-[源代码](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.tar.gz)
+[源代码](https://bitbucket.org/yixuan/cn/downloads/Layer_0.1-0.tar.gz)
 
-[Windows二进制包](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer_0.1-0.zip)
+[Windows二进制包](https://bitbucket.org/yixuan/cn/downloads/Layer_0.1-0.zip)
 
-[Windows二进制包（含GTK+运行库）](http://yixuan.cos.name/cn/wp-content/uploads/2011/09/Layer.zip)
+[Windows二进制包（含GTK+运行库）](https://bitbucket.org/yixuan/cn/downloads/Layer.zip)

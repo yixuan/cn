@@ -38,7 +38,7 @@ getData = function()
         grid.points(x, y);
         NULL
     }
-    mouseup = function(buttons, x, y) {    
+    mouseup = function(buttons, x, y) {
         eventEnv$onMouseMove = NULL;
         NULL
     }
@@ -81,4 +81,4 @@ guess = function(verbose = FALSE)
 
 有玩成功了的同志在评论里吼一嗓子啊（貌似4很难识别对），谢谢。
 
-下载：[train.RData](http://yixuan.cos.name/cn/wp-content/uploads/2011/12/HandwritingRecognition.zip)
+下载：[train.RData](https://bitbucket.org/yixuan/cn/downloads/HandwritingRecognition.zip)

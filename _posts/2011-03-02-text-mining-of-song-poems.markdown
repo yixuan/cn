@@ -18,7 +18,7 @@ tags:
 
 当然里面会有很多无意义的字的组合，不过这类“词语”本身的出现就是一个偶然，所以可以预期的是它们整体的频数会很低，是入不了“大雅之堂”的。话不多说，直接上代码和结果。
 
-数据：[《全宋词》文本](http://yixuan.cos.name/cn/wp-content/uploads/2011/03/Ci.zip)
+数据：[《全宋词》文本](https://bitbucket.org/yixuan/cn/downloads/Ci.zip)
 
 代码：
 

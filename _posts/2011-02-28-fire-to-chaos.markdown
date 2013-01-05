@@ -22,7 +22,7 @@ tags:
 	
   * 向R core报告了HTML帮助中的一个bug，看看是否会有回应；
 	
-  * 成功编译了gotoblas2，而且居然支持多核计算，甚好甚强大（[下载](http://yixuan.cos.name/cn/wp-content/uploads/2011/02/gotoblas2.zip)）；
+  * 成功编译了gotoblas2，而且居然支持多核计算，甚好甚强大（[下载](https://bitbucket.org/yixuan/cn/downloads/gotoblas2.zip)）；
 	
   * 不小心皈依了Emacs教，不过是否虔诚还有待考证；
 	
