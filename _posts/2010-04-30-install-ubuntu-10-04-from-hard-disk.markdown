@@ -22,43 +22,24 @@ tags:
 
 	
   * 第二步，创建menu.lst，内容如下：
-
-
-
-    
-    title Install Ubuntu
+  
+    <pre>title Install Ubuntu
     root (hd0,1)
     kernel (hd0,1)/vmlinuz boot=casper iso-scan/filename=/ubuntu-10.04-desktop-i386.iso ro quiet
     splash locale=zh_CN.UTF-8
-    initrd (hd0,1)/initrd.lz
-
-
+    initrd (hd0,1)/initrd.lz</pre>
 理论上Windows的C盘应该是(hd0,0)的，但不知为何我这儿成了(hd0,1)。
-
-
-
 	
   * 第三步，修改Windows启动项，加上语句
+  
+    <pre>C:\grldr="Install Ubuntu"</pre>
 
-
-
-    
-    C:\grldr="Install Ubuntu"
-
-
-
-
-
-	
   * 第四步，把光盘镜像复制到C盘根目录，并解压其中的vmlinuz和initrd.lz。
 
 	
   * 第五步，重启，进入Ubuntu光盘。其中要注意，安装之前需要在终端执行
 
-
-
-    
-    sudo umount -l /isodevice
+    <pre>sudo umount -l /isodevice</pre>
 
 
 我下的这个版本，安装完Ubuntu后Windows XP的启动菜单会消失，这时需要在终端下执行
@@ -71,4 +52,4 @@ tags:
 
 另：关闭按钮放在左边确实有些别扭……
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2010/04/Ubuntu.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/04/Ubuntu.png)
+[![](http://i.imgur.com/DmOrZ.png)](http://i.imgur.com/DmOrZ.png)
