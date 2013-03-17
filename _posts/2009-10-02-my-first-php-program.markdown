@@ -19,36 +19,36 @@ tags:
 
 我目前对摘要的一个想法是，如果文章有多段，那么摘要就只显示第一段；如果第一段太长，那么再精简句子。有了这个想法后我就开始硬着头皮把WP Kit CN插件的wp-kit-cn.class.php文件（摘要函数所在的文件）进行改写，最后把里面的`WKC_excerpt()`函数改成了下面的语句：
 
-    
-    function WKC_excerpt ($text){
-    	global $post;
-    	remove_filter('the_excerpt', 'mul_excerpt');
-    	remove_filter('the_excerpt_rss', 'mul_excerpt');
-    	if ( '' == $text ) {
-    		$text = $post->post_content;
-    		$text = apply_filters('the_content', $text);
-    		$text = str_replace(']]>', ']]>', $text);
-    		$text = strip_tags($text);
-    		$text = trim($text);
-    		$wordnum = $this->options['excerpt_words_number'];
-    		$firstpara=explode("\n", $text);
-    		$text=$firstpara[0];
-    		$text=$this->cut_str($text,$wordnum);
-    		$words = explode("。", $text);
-    		$output = '';
-    		if ( count($words) == 1 ) {
-    			$output=$text;
-    		}else{
-    			for($i=0;$i<count($words)-1;$i++){
-    				$output.=$words[$i].'。';
-    			}
-    		}
-    		$output.='……';
-    		return $output;
-    	}
-    	return $text;
+{% highlight php %}
+function WKC_excerpt ($text){
+    global $post;
+    remove_filter('the_excerpt', 'mul_excerpt');
+    remove_filter('the_excerpt_rss', 'mul_excerpt');
+    if ( '' == $text ) {
+        $text = $post->post_content;
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+        $text = strip_tags($text);
+        $text = trim($text);
+        $wordnum = $this->options['excerpt_words_number'];
+        $firstpara=explode("\n", $text);
+        $text=$firstpara[0];
+        $text=$this->cut_str($text,$wordnum);
+        $words = explode("。", $text);
+        $output = '';
+        if ( count($words) == 1 ) {
+            $output=$text;
+        }else{
+            for($i=0;$i<count($words)-1;$i++){
+                $output.=$words[$i].'。';
+            }
+        }
+        $output.='……';
+        return $output;
     }
-
+    return $text;
+}
+{% endhighlight %}
 
 其中有些函数和变量是来自这个文件的其它地方，要查看全部的代码的话可以到[http://wordpress.org/extend/plugins/wp-kit-cn/](http://wordpress.org/extend/plugins/wp-kit-cn/)去下载插件。这段程序的意思大概就是先提取文本的第一段，然后截取前`$wordnum`（通过WP Kit CN的设置获取）个字符，再判断这段文字中有多少个句号，如果没有句号就全部返回，如果有就返回最后一个句号前的所有文本，最后再加上一个意味深长的省略号，就算是完成了。
 

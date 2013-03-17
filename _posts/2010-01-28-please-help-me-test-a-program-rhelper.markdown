@@ -23,9 +23,9 @@ tags:
 
 鉴于此，我之前便萌生了一个想法，就是把帮助文件动态生成的特性与chm的优点结合起来，为2.10.0以上版本的R做一个简便易用的帮助系统。下面是一幅程序运行的截图：
 
-[![](http://yixuan.cos.name/cn/wp-content/uploads/2010/01/Rhelper-300x211.png)](http://yixuan.cos.name/cn/wp-content/uploads/2010/01/Rhelper.png)
+[![](http://i.imgur.com/NC4nPs7.png)](http://i.imgur.com/NC4nPs7.png)
 
-程序主要由两部分组成，一部分是外部程序，用以打开动态生成的html文件，另一部分是R中的函数，用来调用这个外部程序。程序可以从[这里](http://yixuan.cos.name/cn/wp-content/uploads/2010/01/Rhelper_bin_20100130.zip)下载，“安装”的办法是把压缩包里的Rhelper.exe和libgcc_s_dw2-1.dll复制到R安装目录的bin文件夹中，然后在R中运行Rhelper.R中的函数。如果准备经常用的话，可以把这个函数加入到etc/Rprofile.site中，这样每次打开R的时候程序就会自动把`Rhelper()`这个函数载入，用的时候只需`Rhelper(topic)`，比如`Rhelper(par)`就可以了。
+程序主要由两部分组成，一部分是外部程序，用以打开动态生成的html文件，另一部分是R中的函数，用来调用这个外部程序。程序可以从[这里](https://bitbucket.org/yixuan/cn/downloads/Rhelper_bin_20100130.zip)下载，“安装”的办法是把压缩包里的Rhelper.exe和libgcc_s_dw2-1.dll复制到R安装目录的bin文件夹中，然后在R中运行Rhelper.R中的函数。如果准备经常用的话，可以把这个函数加入到etc/Rprofile.site中，这样每次打开R的时候程序就会自动把`Rhelper()`这个函数载入，用的时候只需`Rhelper(topic)`，比如`Rhelper(par)`就可以了。
 
 目前这个程序已经实现了帮助文件中函数超链接的跳转，但一些外部的链接（比如链接到网站）和最底下的索引页链接还暂时无法实现。此外一个问题是这个程序的打开速度可能会比R自己的帮助慢零点几秒，因为这个程序调用了R中的一些函数，在用这些函数时相当于要新打开一个R进程。
 
@@ -35,9 +35,9 @@ tags:
 
 **20100129更新：**图标的问题搞定了，现在无需那两张png就可以显示图片了。lanfeng碰到的问题我暂时没有遇到，所以不知道应该怎样修改程序，但我想确定一下，你的那些包是不是最新版本的？如果是比较老的，还带有chm帮助的，可能会有些问题。此事还有待查证。
 
-回谢老大的问题：默认的加载页面是我胡乱设定的，因为是Rhelper嘛，所以就选择`help()`函数的帮助了。:)  
-生成html的方法是用`tools`包里的`tools:::fetchRdDB()`函数和`Rd2HTML()`函数，前者从每个包的help/\*.rdb数据库中抓出Rd对象，后者把这个Rd对象转成html。函数的使用方法可以看R源码包src/library/utils/R/help.R的第237行。  
-函数跳转就是读取超链接地址中提供的包名和Rd文档名，然后用类似的方法生成html。不过有时候包名好像有问题，比如`graphics`包里链到`grDevices`包的函数，其路径还是`graphics`，遇到这种情况时只能再用一次`help()`来搜索。  
+回谢老大的问题：默认的加载页面是我胡乱设定的，因为是Rhelper嘛，所以就选择`help()`函数的帮助了。:)
+生成html的方法是用`tools`包里的`tools:::fetchRdDB()`函数和`Rd2HTML()`函数，前者从每个包的help/\*.rdb数据库中抓出Rd对象，后者把这个Rd对象转成html。函数的使用方法可以看R源码包src/library/utils/R/help.R的第237行。
+函数跳转就是读取超链接地址中提供的包名和Rd文档名，然后用类似的方法生成html。不过有时候包名好像有问题，比如`graphics`包里链到`grDevices`包的函数，其路径还是`graphics`，遇到这种情况时只能再用一次`help()`来搜索。
 这个程序是用开源的GUI库wxWidgets写的，里面提供了显示html的控件，也正是因为这个我才有打算编出这个程序。不知道wxWidgets跟gWidgets有没有关系，如果有联系的话可能移植起来会方便些。
 
-源代码在[这里](http://yixuan.cos.name/cn/wp-content/uploads/2010/01/Rhelper_src_20100130.zip)下载。（纯业余，不知道怎么生成标准的源码结构，就把Code::Blocks的工程文件发上来了。工程可以直接用Code::Blocks打开，但里面的一些依赖库的路径得改。）
+源代码在[这里](https://bitbucket.org/yixuan/cn/downloads/Rhelper_src_20100130.zip)下载。（纯业余，不知道怎么生成标准的源码结构，就把Code::Blocks的工程文件发上来了。工程可以直接用Code::Blocks打开，但里面的一些依赖库的路径得改。）

@@ -26,18 +26,18 @@ tags:
 
 第四，编写C语言文件，示例如下：
 
-    
-    #include <stdio.h>
-    #include <Rmath.h>
-    
-    int main()
-    {
-        double a=Rf_dnorm4(0,0,1,0);
-        printf("%f",a);
-    
-        return 0;
-    }
+{% highlight c %}
+#include <stdio.h>
+#include <Rmath.h>
 
+int main()
+{
+    double a = Rf_dnorm4(0, 0, 1, 0);
+    printf("%f", a);
+
+    return 0;
+}
+{% endhighlight %}
 
 其中`Rf_dnorm4()`是求正态分布密度的函数，参数的意义见R中的`dnorm()`。
 

@@ -46,7 +46,7 @@ tags:
 
 用一张流程图来说明，就是：
 
-![flowchart](http://yixuan.cos.name/cn/wp-content/uploads/2009/11/flowchart.png)
+![flowchart](http://i.imgur.com/LiGmmY9.png)
 
 再举一个直观的例子。假设有一批新样品，自身聚类的编号是
 
@@ -232,7 +232,7 @@ tags:
 
 有了上面的思想和计算方法，预测强度的应用就很直接了。就拿确定聚类数来说，我们只要算出各个聚类数下的预测强度，然后找出其中的最大值对应的k就可以了。
 举一个原文中的例子，下图是作者做的三个模拟实验，其中左边的三幅图表示实际处理的三组数据，右边是对应的预测强度计算结果。在右边的图中，横轴表示尝试使用的聚类数，纵轴是每一个聚类数下的预测强度，将这些点连成图线，就可以直观地看出预测强度随聚类数的变化情况。
-![ps_k](http://yixuan.cos.name/cn/wp-content/uploads/2009/11/ps_k.png)
+![ps_k](http://i.imgur.com/ToQJIoK.png)
 从右边第一幅图可以看出，预测强度在k>1时都比较小，尚不足70%，说明聚类数在大于1时表现都不太良好，这正好与左图反映的情况是一致的——数据本身就十分混杂，应该只有一类；
 而右边第二幅和第三幅图分别在k=2和k=3时达到了高峰，这与左图反映的数据形态也是完全吻合的。
 
@@ -270,24 +270,25 @@ tags:
 
 附：计算预测强度的R代码，供参考。
 
-    
-    psk=function(train,test,k)
+{% highlight r %}
+psk=function(train,test,k)
+{
+    cl.train=kmeans(train,k)$cluster;
+    cl.test=kmeans(test,k)$cluster;
+    n=table(cl.test);
+    library(MASS);
+    train=cbind(as.data.frame(train),cl=cl.train);
+    lda.model=lda(cl~.,data=train);
+    cl.test.pred=predict(lda.model,test)$class;
+
+    if(is.vector(test)) test=as.matrix(test,ncol=1);
+    ps=numeric(k);
+    for(i in 1:k)
     {
-        cl.train=kmeans(train,k)$cluster;
-        cl.test=kmeans(test,k)$cluster;
-        n=table(cl.test);
-        library(MASS);
-        train=cbind(as.data.frame(train),cl=cl.train);
-        lda.model=lda(cl~.,data=train);
-        cl.test.pred=predict(lda.model,test)$class;
-    
-        if(is.vector(test)) test=as.matrix(test,ncol=1);
-        ps=numeric(k);
-        for(i in 1:k)
-        {
-            index=(1:dim(test)[1])[cl.test==i];
-            pred=cl.test.pred[index];
-            ps[i]=(sum(outer(pred,pred,"=="))-n[i])/n[i]/(n[i]-1);
-        }
-        return(min(ps));
+        index=(1:dim(test)[1])[cl.test==i];
+        pred=cl.test.pred[index];
+        ps[i]=(sum(outer(pred,pred,"=="))-n[i])/n[i]/(n[i]-1);
     }
+    return(min(ps));
+}
+{% endhighlight %}

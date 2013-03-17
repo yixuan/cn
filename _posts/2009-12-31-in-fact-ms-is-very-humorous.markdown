@@ -13,10 +13,10 @@ tags:
 - 新年快乐
 ---
 
-![ms1](http://yixuan.cos.name/cn/wp-content/uploads/2009/12/ms1.png)
+![ms1](http://i.imgur.com/tpbCZ2q.png)
 
-![ms2](http://yixuan.cos.name/cn/wp-content/uploads/2009/12/ms2.png)
+![ms2](http://i.imgur.com/kTMAI04.png)
 
-![ms3](http://yixuan.cos.name/cn/wp-content/uploads/2009/12/ms3.png)
+![ms3](http://i.imgur.com/mW0LEzG.png)
 
 算是年底给大家找点乐子吧。:-)
