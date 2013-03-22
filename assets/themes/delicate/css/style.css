@@ -1882,3 +1882,37 @@ cite .note a {
     float: none !important;
   }
 }
+
+
+.entry ul.tag_box {
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 5px 0;
+}
+.entry ul.tag_box li {
+    line-height: 28px;
+    background: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.entry ul.tag_box.inline li {
+    float: left;
+}
+.entry ul.tag_box a {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-radius: 3px 3px 3px 3px;
+    color: #005F6B;
+    margin: 2px 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+}
+.entry ul.tag_box a span {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+.entry ul.tag_box a.active {
+    background: none repeat scroll 0 0 #57A957;
+    border: 1px solid #4C964D;
+    color: #FFFFFF;
+}
