@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page_no_comment
 tagline: 平生书癖已无恙，解名缰，更逃羁网
 ---
 {% include JB/setup %}

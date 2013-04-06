@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page_no_comment
 title : 文章归档
 header : 文章归档
 group: no_navigation
