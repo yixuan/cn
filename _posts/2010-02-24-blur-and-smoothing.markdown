@@ -9,8 +9,12 @@ categories:
 - 学习中
 tags:
 - 平滑
-- 核函数回归
-- 高斯模糊
+- 核函数
+- 模糊
+- GIMP
+- 非参数
+- 回归
+- 正态分布
 ---
 
 用过Photoshop或者GIMP的朋友应该都对高斯模糊这个工具比较熟悉。我虽然对作图不怎么了解，但隐约感觉投影效果中的阴影就是用高斯模糊做成的。下面是一个简单的高斯模糊的示例（[图片来源](http://www.zcool.com.cn/gfx/ZNzMyNjQ=.html)），还有一个真相请看[这里](http://yihui.name/cn/2010/02/a-big-thank-you-to-linlin-yan/)：

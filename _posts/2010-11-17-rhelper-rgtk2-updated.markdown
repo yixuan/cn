@@ -9,11 +9,12 @@ categories:
 - R
 - 学习中
 tags:
+- R
 - GUI
 - RGtk2
 - Rhelper
-- 图形界面
 - 帮助
+- 程序
 ---
 
 前两天做了一个稍微有些艰难的决定，把[Rhelper-RGtk2](http://yixuan.github.com/cn/2010/08/rhelper-rgtk2/)更新了一下。主要更新的地方有：

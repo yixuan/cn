@@ -13,6 +13,8 @@ tags:
 - Processing
 - R
 - 可视化
+- 图形
+- 程序
 ---
 
 标题里的Processing不是一个动名词，而是一个纯粹的名词。很早以前谢老大就曾[在COS论坛中推荐过Processing](http://cos.name/cn/topic/15015)，特别是在“统计图形与数据可视化兴趣小组”成立之后。

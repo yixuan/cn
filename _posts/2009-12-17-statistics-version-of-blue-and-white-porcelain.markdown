@@ -8,7 +8,7 @@ wordpress_id: '237'
 categories:
 - 生活
 tags:
-- 歌词
+- 歌
 - 统计
 - 青花瓷
 ---

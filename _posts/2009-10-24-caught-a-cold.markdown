@@ -9,6 +9,7 @@ categories:
 - 生活
 tags:
 - k-means
+- 聚类
 - 感冒
 - 收敛
 ---

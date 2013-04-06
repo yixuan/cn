@@ -10,7 +10,7 @@ categories:
 tags:
 - 幽默
 - 微软
-- 新年快乐
+- 新年
 ---
 
 ![ms1](http://i.imgur.com/tpbCZ2q.png)

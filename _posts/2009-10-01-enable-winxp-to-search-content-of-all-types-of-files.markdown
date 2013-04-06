@@ -9,9 +9,9 @@ categories:
 - 学习中
 tags:
 - PHP
-- WinXP
+- 模版
 - WordPress
-- 包含文字
+- Windows
 - 搜索
 ---
 

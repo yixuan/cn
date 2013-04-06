@@ -9,11 +9,14 @@ categories:
 - R
 - 学习中
 tags:
+- R
 - GUI
 - RGtk2
 - Rhelper
-- 图形界面
 - 帮助
+- 程序
+- Ubuntu
+- Windows
 ---
 
 寒假的时候用wxWidgets程序库写过一个[Rhelper小程序](http://localhost:4000/2010/01/please-help-me-test-a-program-rhelper/)，初衷是在chm类型的帮助文档被取消后，能提供一个类似的查看帮助的环境。当时编的那个程序基本实现了这一目标，但它有两个比较大的缺点：一是程序与R相脱离，调用起来不方便；二是程序只能在Windows下运行，对操作系统有依赖。由于当时能力和时间有限，所以也就没再多加考虑。

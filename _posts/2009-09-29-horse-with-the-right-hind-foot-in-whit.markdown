@@ -7,6 +7,9 @@ title: 骧
 wordpress_id: '56'
 categories:
 - 生活
+tags:
+- GRE
+- 词汇
 ---
 
 > 骧，后右蹄白色的马。

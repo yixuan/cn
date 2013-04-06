@@ -12,9 +12,12 @@ tags:
 - animation
 - GNU
 - R会议
-- SWF Tools
+- SWF
 - 安全
 - 跨平台
+- 开源
+- 编译
+- COS
 ---
 
 第二届中国R语言会议上海会场已经在昨天顺利闭幕，虽然我无法亲临现场，而且现在也还没有看到相关的照片和报道，但我相信一定是extRemely wondeRful的。

@@ -12,6 +12,7 @@ tags:
 - Processing
 - WordPress
 - 插件
+- 图形
 ---
 
 Processing有Javascript版本了！虽然这已经是个[很老很老的新闻](http://processingjs.org/)，但今天突然看到有款[Wordpress插件](http://www.keyvan.net/code/processing-js/)，可以直接在Wordpress里写Processing程序，于是果断装上试试。下面是一段示例（Processing的JS库比较大，需要等它下载完毕，所以可能得过一段时间才出现）：

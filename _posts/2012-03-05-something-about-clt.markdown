@@ -7,6 +7,7 @@ title: CLT的一些事
 categories:
 - 学习中
 tags:
+- 分布
 - 中心极限定理
 - 变异
 - 均值

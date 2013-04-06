@@ -8,7 +8,8 @@ wordpress_id: '150'
 categories:
 - 生活
 tags:
-- 十一月
+- 秋
+- 冬
 - 雪
 ---
 

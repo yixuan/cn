@@ -8,7 +8,7 @@ wordpress_id: '649'
 categories:
 - 生活
 tags:
-- R语言会议
+- R会议
 - 聚散
 - 相逢
 ---

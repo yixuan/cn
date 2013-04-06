@@ -11,6 +11,9 @@ tags:
 - R
 - 中国心
 - 国庆
+- rgl
+- 图形
+- 程序
 ---
 
 国庆那天ID为微微的朋友在[COS论坛](http://cos.name)的R版发了一个帖子，名叫“[灌灌水庆庆生](http://cos.name/bbs/read.php?tid=16743)”，里面是用随机点图描绘的一幅漂亮的中国心。当时突然想起来以前在百度贴吧看到的[一个帖子](http://tieba.baidu.com/f?ct=335675392&tn=baiduPostBrowser&sc=5137217861&z=511497934&pn=0&rn=30&lm=0&word=%CA%FD%D1%A7#5137217861)，是用一个曲面方程画出一颗立体的心形，于是乎，我就委托Mr. R照着方程的样子也画了一颗。

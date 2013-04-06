@@ -11,12 +11,13 @@ categories:
 tags:
 - Julia
 - R
-- R语言
 - 并行
 - 有理数
-- 编程
+- 程序
 - 语言
 - 速度
+- 开源
+- 社区
 ---
 
 > ## _In short, because we are greedy._

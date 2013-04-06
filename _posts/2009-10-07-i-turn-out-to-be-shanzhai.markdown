@@ -10,7 +10,8 @@ categories:
 - 生活
 tags:
 - 山寨
-- 怡然轩
+- 网络
+- 域名
 ---
 
 [http://www.yiranxuan.com/](http://www.yiranxuan.com/)

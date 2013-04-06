@@ -8,7 +8,7 @@ wordpress_id: '398'
 categories:
 - 生活
 tags:
-- R语言会议
+- R会议
 - 挫折
 - 淡定
 ---

@@ -10,6 +10,7 @@ categories:
 tags:
 - COS
 - 博客
+- 网络
 ---
 
 又有两位重量级COS老大入驻cos.name，大家速速前去围观！

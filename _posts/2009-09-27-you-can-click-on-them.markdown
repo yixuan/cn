@@ -10,6 +10,7 @@ categories:
 tags:
 - WordPress
 - 模版
+- 网页
 ---
 
 右上角的AA<>和最底下的“^”，模版作者都设计好了。

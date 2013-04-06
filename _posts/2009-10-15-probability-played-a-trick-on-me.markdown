@@ -8,8 +8,8 @@ wordpress_id: '124'
 categories:
 - 生活
 tags:
-- 几何分布
-- 性别比例
+- 分布
+- 性别
 - 概率
 ---
 
