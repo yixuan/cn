@@ -8,7 +8,7 @@ tagline: 平生书癖已无恙，解名缰，更逃羁网
 {% assign post = site.posts[i] %}
 <div class="post">
   <div class="title">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
     {% if post.date %}
     <small>{{ post.date | date: "%Y 年 %m 月 %d 日" }} | 分类于
     {% else %}
