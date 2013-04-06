@@ -24,6 +24,8 @@ tags:
 
 除了基本的读写操作之外，如之前所说，xlsx包还能进行格式方面的设置。下面是一个简单的例子，说明了如何创建工作簿和工作表，如何操作单元格等。感兴趣的朋友不妨运行一下下面的例子，看看最终的效果。
 
+<!-- more -->
+
 {% highlight r %}
 link = "http://yixuan.cos.name/cn/wp-content/uploads/2012/01/ind.txt";
 ind = read.table(url(link), sep = "\t");

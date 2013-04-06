@@ -5,7 +5,7 @@ tagline: 平生书癖已无恙，解名缰，更逃羁网
 ---
 {% include JB/setup %}
 
-{% for i in (0..9) %}
+{% for i in (0..5) %}
 {% assign post = site.posts[i] %}
 <div class="post">
   <div class="title">
@@ -21,9 +21,10 @@ tagline: 平生书癖已无恙，解名缰，更逃羁网
     </small>
   </div><!-- END title -->
   <div class="entry">
-    {{ post.content | truncatewords:20 | strip_html }}
+    {{ post.content | split: '<!-- more -->' | first }}
     <div class="clear"></div>
   </div><!-- END entry -->
+  <p><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文→</a></p>
 </div><!-- END post -->
 <div class="deco-line"></div>
 {% endfor %}
