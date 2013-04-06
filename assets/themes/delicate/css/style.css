@@ -125,7 +125,7 @@ h1 {
   font-size: 30px;
 }
 h2, h2 a {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: bold;
   margin: 0;
 }
@@ -510,7 +510,7 @@ ul.bullet-6 li {
 /* =Begin Post
 -------------------------------------------------------------- */
 .post {
-	margin: 0px 10px 20px 0px;
+	margin: 0px 10px 20px 10px;
 	text-align: left;
 }
 .post .postmetadata img {
@@ -545,7 +545,7 @@ ul.bullet-6 li {
 	line-height: 35px;
 }
 .post .title h2 a {
-	font-size: 24px;
+	font-size: 21px;
 }
 .singlepage .post .title {
 	position: relative;
@@ -1434,3 +1434,15 @@ ul.bullet-6 li {
     border: 1px solid #4C964D;
     color: #FFFFFF;
 }
+
+
+/* Index page related */
+.deco-line {
+    background: url("../images/long-deco-line.png") no-repeat scroll center center transparent;
+    height: 26px;
+    width: 100%;
+}
+
+
+
+
