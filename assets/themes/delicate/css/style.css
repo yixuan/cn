@@ -1443,6 +1443,11 @@ ul.bullet-6 li {
     width: 100%;
 }
 
-
-
+/* Archive page related */
+.blog-list-date {
+margin: 0 10px 0 50px;
+}
+.blog-list-title {
+margin: 0 0 0 10px;
+}
 
