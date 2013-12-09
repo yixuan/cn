@@ -45,7 +45,7 @@ dev.off()
 会创建一个两帧的 Flash 动画，每一个新的 `plot()` 语句就代表了新的一帧。此外，这个 SWF 设备还加入了完整的字体支持，意思是你可以使用任何一个 ttf/ttc 类型的字体来绘制文字，包括对中文字体的支持，就像下面这样。
 
 <div align="center">
- <embed width="350" height="210" name="plugin" src="{{ BASE_PATH }}/files/2013/12/R2SWF_example.swf" type="application/x-shockwave-flash"> 
+ <embed width="350" height="210" name="plugin" src="http://yixuan.cos.name/cn/files/2013/12/R2SWF_example.swf" type="application/x-shockwave-flash"> 
 </div>
 
 关于这些 `R2SWF` 的新特性和用法，我想会另写一篇博客来说明。
@@ -57,7 +57,4 @@ dev.off()
 - 一定要在 DESCRIPTION 文件的 Author 栏加上那些代码的作者。如果人太多，可以写在一个名为 AUTHORS 的文件里，塞到源码包的 inst 文件夹下。
 - 如果那些代码包含版权信息，应该把它们写在一个名为 COPYRIGHTS 的文件里，同样塞到 inst 文件夹下。
 - 注意许可证的兼容性。引用了 GPL 的代码，就必须把整个包变成 GPL 的。如果包含的代码是 GPL-2 的，整个包的许可证就必须是 GPL-2，不能是 GPL-3。许可证为 GPL-2 的软件包不能包含 Apache 2.0 的代码，但 GPL-3 可以。许可证为 Apache 2.0 的包不能包含 GPL 的代码，这意味着，你的软件包不能同时包含 GPL-2 和 Apache 2.0 的代码。你已经绕晕了对不对？其实我也是，都是被逼的。
-
-
-
 
