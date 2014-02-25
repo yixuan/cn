@@ -53,7 +53,7 @@ dev.off()
 `font.add()`的第一个参数是绘图时字体的系列名（family），也就是告诉R如何在绘图时引用这个字体。第二个参数是字体的路径，如果字体在工作目录下就直接打字体名。当然，操作系统一般都会有一些默认的字体安装位置，`showtext`（实际上是其依赖的[sysfonts](https://github.com/yixuan/sysfonts/)包）会尝试搜索这些路径。在Windows下，直接输入
 
 {% highlight r %}
-font.add("kaiti", "simsun.ttf")
+font.add("songti", "simsun.ttc")
 {% endhighlight %}
 
 就可以加载宋体。
