@@ -180,7 +180,7 @@ code, kbd, samp, var, pre {
     border-radius: 3px;
 }
 pre {
-    line-height: 1.2;
+    /* line-height: 1.2; */
 	margin-bottom: 1.5em;
 	overflow: auto;
 	padding: 0.75em 1.5em;
