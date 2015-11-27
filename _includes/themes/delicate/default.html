@@ -11,13 +11,13 @@
     <link rel="stylesheet" id="default-css" href="{{ ASSET_PATH }}/css/style.css" type="text/css" media="all" />
 
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.cycle.all.js"></script>
+    <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.cycle2.min.js"></script>
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-ui.custom.min.js"></script>
     <link rel="stylesheet" href="{{ ASSET_PATH }}/css/flick/jquery-ui.custom.css" type="text/css" />
-	
+
 	<!-- Highlight support -->
     <link href="{{ ASSET_PATH }}/css/highlight.css" rel="stylesheet">
-    
+
     <!-- MathJax support -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
@@ -45,7 +45,7 @@
     <script type="text/javascript"
        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    
+
     <!-- Google Custom Search -->
     <script>
       (function() {
@@ -56,9 +56,9 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
       })();
    </script>
-   
+
    <!-- Slideshow -->
-   <script type="text/javascript" charset="utf-8">/*<![CDATA[*/ 
+   <script type="text/javascript" charset="utf-8">/*<![CDATA[*/
     jQuery(document).ready(function() {
         jQuery(".slideshow").cycle({
           fx: "fade",
@@ -69,7 +69,7 @@
           pauseOnPagerHover: true,
           cleartypeNoBg: true });
       });
-   /*]]>*/</script> 
+   /*]]>*/</script>
 
 {% include JB/analytics %}
 
@@ -84,35 +84,28 @@
     </div>
 
     <div class="top">
-      <div id="menu">	
+      <div id="menu">
         <ul id="nav-ie" class="topnav">
           <li class="page_item"><a href="{{ HOME_PATH }}" title="Home">主页</a></li>
           {% assign pages_list = site.pages %}
           {% assign group = 'navigation' %}
           {% include JB/pages_list %}
         </ul>
-      </div>                
+      </div>
     </div> <!-- END top -->
-    
+
     <div class="clear"></div>
     <div class="head-img">
       <div class="slideshow-bg module">
-        <div class="slideshow">
-          <div>
-            <div class="tagline">解名缰</div>
-            <img src="{{ ASSET_PATH }}/images/header/header1.jpg" alt="Header">
-          </div>
-          <div>
-            <div class="tagline">鸟倦飞</div>
-            <img src="{{ ASSET_PATH }}/images/header/header2.jpg" alt="Header">
-          </div>  
+        <div class="cycle-slideshow">
+          <img src="{{ ASSET_PATH }}/images/header/header1.jpg" alt="解名缰">
+          <img src="{{ ASSET_PATH }}/images/header/header2.jpg" alt="鸟倦飞">
         </div><!-- END Slideshow -->
-        <div id="slideshow-nav"></div>
       </div><!-- END slideshow-bg -->
     </div><!-- END Header -->
-    
-    <div id="main">		
-	  <div class="columns">	
+
+    <div id="main">
+	  <div class="columns">
         <div class="narrowcolumn singlepage no">
           {{ content }}
 	    </div><!-- END Narrowcolumn -->
@@ -122,8 +115,8 @@
             <li id="widget_search" class="widget">
               <gcse:searchbox-only></gcse:searchbox-only>
               <div style="clear:both;"></div>
-            </li> 
-            
+            </li>
+
             <li id="RSS" class="widget">
               <h2 class="blocktitle">订阅</h2>
               <ul>
@@ -131,7 +124,7 @@
                 <li class="cat-item"><a href="http://joyfulhomecn.disqus.com/latest.rss">评论 RSS</a></li>
               </ul>
             </li>
-            
+
             <li id="summary_pages" class="widget">
               <h2 class="blocktitle">过往</h2>
               <ul>
@@ -140,17 +133,17 @@
                 <li class="cat-item"><a href="{{ BASE_PATH }}/archive.html">文章归档</a></li>
               </ul>
             </li>
-            
+
             <li id="widget_categories" class="widget">
               <h2 class="blocktitle"><span>分类目录</span></h2>
                 <ul>
-                  {% for category in site.categories %} 
+                  {% for category in site.categories %}
     	          <li class="cat-item"><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
     		          {{ category[0] | join: "/" }}</a></li>
                   {% endfor %}
 		        </ul>
             </li>
-            
+
             <li id="linkcat-1" class="widget">
               <h2 class="blocktitle"><span>推荐链接</span></h2>
                 <ul>
@@ -178,7 +171,7 @@
                   <li><a href="http://www.blog496.org/" title="同窗">晓伟</a> 同窗</li>
                 </ul>
             </li>
-            
+
             <li id="linkcat-3" class="widget">
               <h2 class="blocktitle"><span>相逢何必曾相识</span></h2>
                 <ul>
@@ -186,28 +179,28 @@
                 </ul>
               </h2>
             </li>
-            
+
           </ul>
         </div><!-- END sidebar -->
 
         <div class="clear"></div>
-        
+
         <div id="footer">
           <div class="lt">
             版权所有 © 2015 怡然轩 | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="http://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
           </div>
 
           <div class="rt">主题修改自 <a href="http://wordpress.org/extend/themes/delicate" title="delicate" rel="copyright">delicate</a> <a href="http://www.nattywp.com/" title="NattyWP"><img src="{{ ASSET_PATH }}/images/natty-logo.png" width="82" height="17" valign="3px" class="png" alt="NattyWP" align="middle"></a>
-          </div>		
-          
+          </div>
+
           <div class="clear"></div>
         </div><!-- END footer -->
 
-      </div> <!-- END Columns --> 
+      </div> <!-- END Columns -->
     </div><!-- END main -->
   </div><!-- END content-pad -->
-  
+
   <div class="clear"></div>
-  
+
 </body>
 </html>
