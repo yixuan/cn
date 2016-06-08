@@ -1,5 +1,5 @@
 ---
-date: '2016-06-07 08:44:33'
+date: '2016-06-08 08:44:33'
 layout: post
 slug: statistics-on-article-titles
 status: publish
@@ -99,8 +99,6 @@ title_mat  = create_dtm(it, vectorizer)
 加上类别、期数和页内次序的信息后，我们共有 1753 个观测和 3180 个自变量。由于变量数大于观测数，我们将采用 Lasso 来对自变量进行筛选。此外，因变量的分布严重右偏，所以我们预先对其进行对数变换后再进行建模。
 
 在 Lasso 回归中，我们选取罚参数使得有30个非零变量被选出，然后将它们按照系数大小做成下面这张图。注意到图中没有包括截距项，而且其中一个变量，文章所在的期数（IssueNO.），因为系数太大影响图片美观，所以对它的柱形进行了截断，其真实的数值标注在柱形上。
-
-![](images/result.png)
 
 <div align="center">
   <img src="http://cos.name/wp-content/uploads/2016/06/result.png" alt="结果展示" />
