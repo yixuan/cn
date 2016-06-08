@@ -22,20 +22,20 @@ tags:
 
 这一次我们的线索依然是t检验的程序，我们准备进一步完善它。作为比较，我们依然先把R的输出结果贴出来：
 
-{% highlight r %}
+```r
 t.test(rnorm(10), mu = 0)
-{% endhighlight %}
+```
 
-{% highlight r %}
+```r
 data:  rnorm(10)
 t = 0.768, df = 9, p-value = 0.4622
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  -0.6509637  1.3201667
 sample estimates:
-mean of x 
-0.3346015 
-{% endhighlight %}
+mean of x
+0.3346015
+```
 
 上一篇中t检验的程序有几个缺陷：
 
@@ -70,7 +70,7 @@ mean of x
 
 请分别运行下面两段程序：
 
-{% highlight r %}
+```r
 f1 = function(x)
 {
     return(NULL);
@@ -83,7 +83,7 @@ f2 = function(x)
     return(NULL);
 }
 f2(print(1));
-{% endhighlight %}
+```
 
 输出结果应该是这样的：
 
@@ -99,23 +99,23 @@ f2(print(1));
 
 当然，我说的是无法实现自动的惰性求值，如果只是要实现表达式的操作，Julia也是可以的。Julia用冒号和括号来表示表达式，比如
 
-{% highlight julia %}
+```julia
 :x
 :(randn(5) + 2)
 :(x + 1)
-{% endhighlight %}
+```
 
 当表达式只包含一个元素时，它的类型就变成了符号（Symbol），比如上面的 `:x`。你甚至可以先把表达式存下来，然后对其取值，或是转换成字符串。
 
-{% highlight julia %}
+```julia
 expr = :(x + 1)
 x = 1
 eval(expr)
 string(expr)
-{% endhighlight %}
+```
 
 总结一下，惰性求值是R中非常独特的一个功能（“作者你够了，这篇文章应该是写Julia的吧！”），最常见的两个例子，一个是 `library(MASS)` （或其他任何一个 `library()` 语句），一个是 `plot(rnorm(10), rnorm(10))`。不知道你有没有发现惰性求值存在的痕迹呢？
- 
+
 当然，惰性求值基本属于黑魔法范畴。Julia虽然不支持这一特性，但对于大部分的应用来说，并不会造成太大的问题——它基本属于锦上添花一类，而不是必需的。
 
 最后依然是涉及到的一些R与Julia的对比。
@@ -130,4 +130,3 @@ string(expr)
 | `expression(x + 1)` | `:(x + 1)`                   | 生成表达式    |
 | `eval(expr)`        | `eval(expr)`                 | 表达式求值    |
 | `as.character(x)`   | `string(x)`                  | 强制转换为字符串 |
-

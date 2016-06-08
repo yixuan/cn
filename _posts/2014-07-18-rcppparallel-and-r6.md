@@ -22,7 +22,7 @@ RcppParallel 是 Rcpp 核心组件的新成员，目前还没有发布到 CRAN�
 
 <!-- more -->
 
-{% highlight r %}
+```r
 includes = '
 using namespace Rcpp;
 using namespace RcppParallel;
@@ -59,7 +59,7 @@ NumericVector parqf(NumericVector x, double df1, double df2, double ncp)
 '
 
 cppFunction(code, depends = "RcppParallel", includes = includes)
-{% endhighlight %}
+```
 
 其中有几点需要解释一下。我们先看主程序 `parqf`，它调用了之前提到的 `parallelFor` 函数。顾名思义，这一句指的是一个并行的 `for` 循环。那么循环体在哪里呢？这就要看里面的 `fun` 参数。`fun` 是 `Qf` 的一个对象，而 `Qf` 又继承自 RcppParallel 中定义好的一个类 `Worker`。这个 `Worker` 类描述了并行计算中每个线程需要干的活，而其核心部分在于那个运算符重载 `operator()`。这又是什么意思？
 
@@ -69,7 +69,7 @@ cppFunction(code, depends = "RcppParallel", includes = includes)
 
 还是直接来看效率的对比，我们分别计算 R 中串行的 `qf` 还有我们实现的 `parqf`，结果如下：
 
-{% highlight r %}
+```r
 > set.seed(123)
 > x = runif(100000)
 > system.time(res1 <- qf(x, 3, 5, 3.4))
@@ -80,7 +80,7 @@ cppFunction(code, depends = "RcppParallel", includes = includes)
  12.010   0.001   3.017 
 > identical(res1, res2)
 [1] TRUE
-{% endhighlight %}
+```
 
 我的机器开了 4 个线程，运行时间从 8 秒减少到了 3 秒。
 

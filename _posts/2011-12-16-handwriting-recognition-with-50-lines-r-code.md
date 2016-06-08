@@ -21,7 +21,7 @@ tags:
 
 <!-- more -->
 
-{% highlight r %}
+```r
 library(grid);
 getData = function()
 {
@@ -81,7 +81,7 @@ guess = function(verbose = FALSE)
     if(verbose) print(coefs);
     cat("I guess what you have input is ", num, ".\n", sep = "");
 }
-{% endhighlight %}
+```
 
 有玩成功了的同志在评论里吼一嗓子啊（貌似4很难识别对），谢谢。
 

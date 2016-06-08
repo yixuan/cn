@@ -52,7 +52,7 @@ Julia:
 与之等价的R程序是
 
 R:
-{% highlight r %}
+```r
 fun1r = function() {
     m = matrix(0, 1000, 1000)
     s = 0
@@ -66,7 +66,7 @@ fun1r = function() {
     }
     s
 }
-{% endhighlight %}
+```
 
 
 ### 速度
@@ -75,11 +75,11 @@ fun1r = function() {
 速度应该是所有的编程语言都要考虑的内容。我们都知道R的痛点在哪儿，像上面的这个R程序照常理是要挨板子的，但我们还是看看它的运行时间。在我的电脑上（就不贴硬件参数了），运行时间大概为：
 
 R:
-{% highlight r %}
+```r
 > system.time(fun1r())
   用户  系统   流逝
 5.769 0.004 5.782
-{% endhighlight %}
+```
 
 然后在Julia中，
 
@@ -95,7 +95,7 @@ Julia:
 但这并不是一次有意义的对比，因为上述过程是可以被向量化的。我们用R来把这段程序优化一下：
 
 R:
-{% highlight r %}
+```r
 fun1optr = function() {
     m = matrix(runif(1000 * 1000), 1000, 1000)
     sum(m)
@@ -104,7 +104,7 @@ fun1optr = function() {
 > system.time(fun1opt())
   用户  系统   流逝
 0.048 0.000 0.051
-{% endhighlight %}
+```
 
 同样地，Julia也进行改写：
 

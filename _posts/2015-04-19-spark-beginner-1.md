@@ -83,7 +83,7 @@ Ubuntu 下是
 
 Spark 的数据分析功能包含在一个称为 MLlib 的组件当中，顾名思义，这是 Spark 的机器学习库，而回归是它支持的模型之一。为了演示例子，我们首先用 R 生成一组模拟的数据（是不是感觉怪怪的，主要是我还没用熟 Scala）：
 
-{% highlight r %}
+```r
 set.seed(123)
 n = 1e6
 p = 5
@@ -92,13 +92,13 @@ b = rnorm(p)
 y = x %*% b + rnorm(n, 1, 3)
 z = data.frame(y, x)
 write.table(z, "reg.txt", sep = " ", row.names = FALSE, col.names = FALSE)
-{% endhighlight %}
+```
 
 我们将数据保存为 `reg.txt` 文件，它共有一百万行，每一行有6个数，用空格分隔，其中第一个数代表因变量，其余的为自变量。
 
 下面就是一段用 Scala 实现的 Spark 算回归的程序，其中包括了读取数据，拟合回归，计算回归系数，进行模型预测以及计算 $R^2$ 的过程。将这段程序复制到 Spark 的终端里，就可以迅速查看输出结果，体验 Spark 的基本功能了。
 
-{% highlight scala linenos=table %}
+```scala
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.regression.LinearRegressionWithSGD
@@ -133,7 +133,7 @@ val pred = res.predict(parsed.map(_.features))
 
 val r = Statistics.corr(pred, parsed.map(_.label))
 println("R-square = " + r * r)
-{% endhighlight %}
+```
 
 下面我们来解释一下程序中每一部分的含义。开头1到4行的是一系列的 `import` 语句，目的是使用一些已经封装好的类，与 R 中的 `library()` 和 Python 的 `import` 语句类似。另外，相信不少读者立刻就能看出这是 Java 风格的导入语句。事实上，Scala 正是基于 Java 而开发的，因此其语法也大多脱胎于 Java。
 
@@ -164,7 +164,3 @@ println("R-square = " + r * r)
 1. [伯克利的 Spark 迷你课程](http://ampcamp.berkeley.edu/big-data-mini-course/index.html)
 2. [Spark 官方快速入门教程](https://spark.apache.org/docs/latest/quick-start.html)
 3. [MLlib 官方文档](https://spark.apache.org/docs/latest/mllib-guide.html)
-
-
-
-

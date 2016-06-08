@@ -34,7 +34,7 @@ tags:
 
 之前写了一篇[跟高斯模糊有关的文章](http://yixuan.github.com/cn/2010/02/blur-and-smoothing/)，里面的代码可以直接用，于是简单改了改，就可以实现上面的铅笔画效果了。代码如下：
 
-{% highlight r %}
+```r
 blur <- function(x, grid, kernelf, ...)
 {
     if(grid < 3) stop("grid should be great than or equal to 3!");
@@ -77,7 +77,7 @@ rasterImage(pencil, 0, 0, x, 500);
 # Use biOps package to write JPEG
 library(biOps);
 writeJpeg("output.jpg", imagedata(pencil) * 255);
-{% endhighlight %}
+```
 
 
 示例图片如下（点击看大图）:

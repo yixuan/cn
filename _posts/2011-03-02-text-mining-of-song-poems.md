@@ -24,7 +24,7 @@ tags:
 
 代码：
 
-{% highlight r %}
+```r
 l = scan("Ci.txt", "character", sep = "\n");
 l.len = nchar(l);
 
@@ -53,7 +53,7 @@ words = unlist(words);
 words.freq = table(words);
 words.freq = sort(words.freq, decreasing = TRUE);
 data.frame(Word = names(words.freq[1:100]), Freq = as.integer(words.freq[1:100]));
-{% endhighlight %}
+```
 
 
 结果（排在第一的是无效字符，这跟数据源有关）：

@@ -273,7 +273,7 @@ tags:
 
 附：计算预测强度的R代码，供参考。
 
-{% highlight r %}
+```r
 psk=function(train,test,k)
 {
     cl.train=kmeans(train,k)$cluster;
@@ -294,4 +294,4 @@ psk=function(train,test,k)
     }
     return(min(ps));
 }
-{% endhighlight %}
+```

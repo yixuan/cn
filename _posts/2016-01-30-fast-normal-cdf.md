@@ -29,7 +29,7 @@ $$P(Z+X\le t)=\int_{-\infty}^{+\infty} \Phi(t-x)f(x)\mathrm{d}x$$
 
 我们来对比一下这种方法与R中 `pnorm()` 的速度，并验证其精度。
 
-{% highlight r %}
+```r
 library(Rcpp)
 sourceCpp("test_as26217.cpp")
 
@@ -42,7 +42,7 @@ system.time(asy <- r_as26217ncdf(x))
 ## 0.293   0.019   0.311
 max(abs(y - asy))
 ## [1] 6.968772e-08
-{% endhighlight %}
+```
 
 可以看出，A&S 26.2.17 的速度大约是 `pnorm()` 的三倍，且误差也在预定的范围里，是对计算效率的一次巨大提升。
 
@@ -66,7 +66,7 @@ $$E(x)\le \frac{1}{8}\Vert f''\Vert_{\infty}h^2$$
 
 这种简单方法的实现我放在了 [Github 上](https://github.com/yixuan/fastncdf)，源程序和测试代码也可以在文章最后找到。下面给出它的表现：
 
-{% highlight r %}
+```r
 library(Rcpp)
 sourceCpp("test_fastncdf.cpp")
 
@@ -76,7 +76,7 @@ system.time(fasty <- r_fastncdf(x))
 ## 0.043   0.024   0.066
 max(abs(y - fasty))
 ## [1] 9.99999e-08
-{% endhighlight %}
+```
 
 与之前的结果相比，相当于速度是 `pnorm()` 的15倍！
 

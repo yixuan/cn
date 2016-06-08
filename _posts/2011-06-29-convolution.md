@@ -37,7 +37,7 @@ $$\displaystyle r_k=\sum_{i+j=k}p_iq_j,\ k=0,1,2,\ldots,n+m$$
 
 在R中，求卷积的函数是`convolve()`，如果要求两个向量`pv`和`qv`的卷积，用法就是`convolve(pv, rev(qv), type = "open")`。注意函数中的第二个向量一定要反向一下，而且`type`参数必须指定为`open`。帖子中的问题，程序代码如下：
 
-{% highlight r %}
+```r
 square = function(n)
 {
     if(n == 1) return(1);
@@ -52,5 +52,5 @@ square = function(n)
     return(v);
 }
 square(10);
-{% endhighlight %}
+```
     

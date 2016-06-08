@@ -28,20 +28,20 @@ tags:
 
 第二个比较显著的改进是更好地支持了位图图形。在之前的版本中，`showtext` 主要用于矢量图，比如 `pdf()` 或者 `svg()`。如果在 `png()` 或是 `jpeg()` 中使用 `showtext`，你会发现画出的字体非常难看。这是因为那些位图设备没有较好的抗锯齿支持。而现在，`showtext` 可以为那些设备绘制好平滑后的字形，所以图片质量也会得到提升。唯一需要注意的是要保持图形设备的 DPI 与 `showtext` 的一致，比如用 `png()` 设备时，应该手动设置一下想要的分辨率（此处 DPI 为120）
 
-{% highlight r %}
+```r
 library(showtext)
 showtext.opts(dpi = 120)
 png(..., res = 120)
-{% endhighlight %}
+```
 
 支持位图图形也就意味着支持了窗口设备，比如 `windows()` 和 `x11()`。
 
 最后一个改进其实是之前 `sysfonts` 包的更新内容，就是目前在国内无法直接连接 Google 的字体库，所以在使用 `font.add.google()` 时，可以使用 360 提供的[代理](http://libs.useso.com/)。使用方法是加一个参数，比如
 
-{% highlight r %}
+```r
 library(showtext)
 font.add.google("Gochi Hand", "gochi", repo = "useso")
-{% endhighlight %}
+```
 
 其他的例子和说明都可以参见 Github 上的[介绍](https://github.com/yixuan/showtext/blob/master/README.md)。
 

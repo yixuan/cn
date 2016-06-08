@@ -39,7 +39,7 @@ tags:
 
 前面说到，用正态分布来进行平滑，所有的点都要参与运算，这在实际操作中运算量是相当大的。但我们知道，正态密度曲线衰减的速度是比较快的，3σ之后与0相差无几，因此在计算时可以人为地划定一个框（比如3×3或5×5等），只对框内的点进行加权。下面就给出一段R语言程序，用来在R中实现高斯模糊的效果。需要说明的是，这段程序只适用于灰度的jpg或jpeg图片，而且算法没有经过优化，速度可能会**非常慢**。rimage包和示例图片到[这里](https://bitbucket.org/yixuan/cn/downloads/Gaussian-Blur.zip)下载。
 
-{% highlight r %}
+```r
 #生成“框”中各个元素的权重，grid是框的边长。
 gaussm = function(grid, sigma) {
     m = outer(1:grid, 1:grid, function(x, y) dnorm(x - (grid +
@@ -71,11 +71,11 @@ plot(pic)
 #新开一个窗口，画出高斯模糊后的图片。
 x11()
 plot(imagematrix(newm))
-{% endhighlight %}
+```
 
 **更新后的代码**，速度应该更快，而且支持彩色图片，可以更换核函数（参数kernelf），感谢Linlin Yan：
 
-{% highlight r %}
+```r
 blur<-function(x,grid,kernelf,...)
 {
     if(grid<3) stop("grid should be great than or equal to 3!");
@@ -118,4 +118,4 @@ library(rimage);
 a=read.jpeg("demo.jpg");
 m=blur.gauss(a,5,3);
 plot(imagematrix(m));
-{% endhighlight %}
+```

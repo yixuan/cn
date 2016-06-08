@@ -27,7 +27,7 @@ tags:
 
 第四，编写C语言文件，示例如下：
 
-{% highlight c %}
+```c
 #include <stdio.h>
 #include <Rmath.h>
 
@@ -38,13 +38,13 @@ int main()
 
     return 0;
 }
-{% endhighlight %}
+```
 
 其中`Rf_dnorm4()`是求正态分布密度的函数，参数的意义见R中的`dnorm()`。
 
 第五，假设上述C程序保存为test.c，那么现在总的文件夹中将有如下的东西：一个include文件夹，一个libR.dll以及一个test.c。打开cmd，cd进这个文件夹，然后输入下面的命令：
 
-    
+
     gcc -o test test.c -I./include -L. -lR
 
 

@@ -27,7 +27,7 @@ tags:
 
 上面那幅图所有的代码如下，当然要事先将其中用到的四个[字体文件](https://bitbucket.org/yixuan/cn/downloads/showtext-example-fonts.zip)放到工作目录下。
 
-{% highlight r %}
+```r
 library(showtext)
 library(Cairo)
 
@@ -46,15 +46,15 @@ text(1, 0.8, "has been released!", cex = 5, family = "newrocker",
 title("Free to use fonts", family = "aerofoil", cex.main = 2)
 showtext.end()
 dev.off()
-{% endhighlight %}
+```
 
 其实也就两步：先用`font.add()`加载字体，然后用`showtext.begin()`和`showtext.end()`把绘图语句包含进来。
 
 `font.add()`的第一个参数是绘图时字体的系列名（family），也就是告诉R如何在绘图时引用这个字体。第二个参数是字体的路径，如果字体在工作目录下就直接打字体名。当然，操作系统一般都会有一些默认的字体安装位置，`showtext`（实际上是其依赖的[sysfonts](https://github.com/yixuan/sysfonts/)包）会尝试搜索这些路径。在Windows下，直接输入
 
-{% highlight r %}
+```r
 font.add("songti", "simsun.ttc")
-{% endhighlight %}
+```
 
 就可以加载宋体。
 

@@ -24,7 +24,7 @@ tags:
 
 <!-- more -->
 
-{% highlight r %}
+```r
 > e = expression(x + abs(y), z <- 1);
 > class(e);
 [1] "expression"
@@ -40,14 +40,14 @@ x
 abs(y)
 > class(ca[[3]]);
 [1] "call"
-{% endhighlight %}
+```
 
 从上面可以看出，我们能用`[[]]`来对`call`对象取子集，例如上面的例子中，`x + abs(y)`是一个`call`对象，其第一个元素是操作符（也是一个函数）`+`，
 第二个元素是参数`x`，第三个元素是一个新的`call`对象`abs(y)`。我们的任务就是递归地把所有的函数/操作符提取出来，然后统计频数。
 
 提取R文件中函数名的函数是这样的：
 
-{% highlight r %}
+```r
 print.exp = function(e)
 {
     # 单个元素，不可再分解
@@ -75,17 +75,17 @@ print.exp = function(e)
     }
     invisible(NULL);
 }
-{% endhighlight %}
+```
 
 用的时候先让`parse()`解析文件，然后套到这个函数里面，就可以把文件里面的函数名打印出来了。为了处理方便，可以用`sink()`重定向输出，例如：
 
-{% highlight r %}
+```r
 op = options(warn = -1);
 sink("output.txt");
 print.exp(parse("someRfile.R"));
 sink();
 options(op);
-{% endhighlight %}
+```
 
 《ggplot2：数据分析与图形艺术》中的代码托管在[这里](https://github.com/cosname/ggplot2-translation/)，
 利用上面编写的函数配合`wordcloud`包，最终做出的词云是这样的：

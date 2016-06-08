@@ -23,7 +23,7 @@ $$\left(\begin{array}{c}X\\Y\end{array}\right)\sim N\left(\left(\begin{array}{c}
 
 那么请打开你的R，然后运行一下下面的代码：
 
-{% highlight r %}
+```r
 set.seed(1);
 x=rnorm(2000);
 y=rnorm(2000);
@@ -35,7 +35,7 @@ cor(y,z);
 hist(z);
 x11();
 plot(y,z);
-{% endhighlight %}
+```
 
 什么？还没缓过神来？请看仔细了，**y和z的符号可是相同的**！那么这说明什么了呢……
 

@@ -26,7 +26,7 @@ tags:
 
 <!-- more -->
 
-{% highlight r %}
+```r
 link = "http://yixuan.cos.name/cn/wp-content/uploads/2012/01/ind.txt";
 ind = read.table(url(link), sep = "\t");
 
@@ -67,6 +67,6 @@ tmp = mapply(function(x, y) setCellStyle(cells[[x, y]], black_cell_style),
     ind[, 1] + 3, ind[, 2] + 5);
 # Save the workbook into a file
 saveWorkbook(wb, "test.xlsx");
-{% endhighlight %}
+```
 
 总的来说，xlsx包是我目前见过的功能最全的操作Excel的R包，它只依赖于Java环境和rJava、xlsxjars两个包，在多种平台下都能运行，局限是写操作只支持Excel 2007格式（*.xlsx），对于机器上只有MS Office 2003的人来说可能会有些不便。（LibreOffice和OpenOffice.org都可以打开Excel 2007文件）

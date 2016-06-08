@@ -31,7 +31,7 @@ tags:
 
 作为一个演示的例子，我们模仿R中的`t.test`函数实现一个单样本的t检验。（R的输出如下）
 
-{% highlight r %}
+```r
 t.test(rnorm(10), mu = 0)
 
         One Sample t-test
@@ -42,13 +42,13 @@ alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  -0.6509637  1.3201667
 sample estimates:
-mean of x 
-0.3346015 
-{% endhighlight %}
+mean of x
+0.3346015
+```
 
 接下来就开门见山，直接上Julia代码。
 
-{% highlight julia %}
+```julia
 # Pkg.add("Distributions")
 # Pkg.installed()
 using Distributions
@@ -60,7 +60,7 @@ function t_test(x, mu = 0)
     tstat = abs(meanx - mu) / stdx * sqrt(n)
     tdist = TDist(n - 1)
     pvalue = 2 * ccdf(tdist, tstat)
-    
+
     println("")
     println("        One Sample t-test")
     println("")
@@ -71,7 +71,7 @@ function t_test(x, mu = 0)
     println("mean of x")
     println(meanx)
 end
-{% endhighlight %}
+```
 
 由于现在博客的代码环境暂时不支持行号，所以我再贴一张图上来：
 
@@ -116,4 +116,3 @@ end
 | `source()`                 | `include()`          | 运行代码文件  |
 | `rnorm(n)`                 | `randn(n)`           | 标准正态随机数 |
 | `q()`                      | `exit()`             | 退出      |
-
