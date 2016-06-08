@@ -1,5 +1,5 @@
 ---
-date: '2016-06-08 08:44:33'
+date: '2016-06-07 08:44:33'
 layout: post
 slug: statistics-on-article-titles
 status: publish
