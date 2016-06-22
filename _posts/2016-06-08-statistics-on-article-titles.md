@@ -126,4 +126,4 @@ title_mat  = create_dtm(it, vectorizer)
 
 最后的最后，我们通过文章标题这个小窗口瞥见了统计学过去十年的一个缩影。下一个十年又会是怎样的光景呢？我们拭目以待。
 
-附：文中数据和代码都放在 [Github](http://github.com/yixuan/COS-article/) 上。
+附：文中数据和代码都放在 [Github](https://github.com/yixuan/COS-article/tree/master/statistics-on-article-titles/) 上。
