@@ -1,5 +1,5 @@
 ---
-date: '2016-06-07 08:44:33'
+date: '2016-06-08 08:44:33'
 layout: post
 slug: statistics-on-article-titles
 status: publish
@@ -22,7 +22,7 @@ tags:
 ---
 
 
-如果你是被这个标题骗进来的，那么说明标题党的存在的确是有原因的。在网络高度发达（以及“大数据”泛滥）的今天，数据动不动就是以 GB 和 TB 的级别存储，然而相比之下，人类接受信息的速度却慢得可怕（参见大刘《乡村教师》）。试想一下，你一分钟能阅读多少文字？一千？五千？总之是在 KB 的量级。所以可以说，人们对文字的”下载速度“基本上就是 1~10KB/min。如果拿这个速度去上网的话你还能忍？
+如果你是被这个标题骗进来的，那么说明标题党的存在的确是有原因的。在网络高度发达（以及“大数据”泛滥）的今天，数据动不动就是以 GB 和 TB 的级别存储，然而相比之下，人类接受信息的速度却慢得可怕（参见大刘《乡村教师》）。试想一下，你一分钟能阅读多少文字？一千？五千？总之是在 KB 的量级。所以可以说，人们对文字的“下载速度”基本上就是 1~10KB/min。如果拿这个速度去上网的话你还能忍？
 
 既然如此，每天网上有成千上万的新闻、报告、文章和八卦，怎么看得过来呢？没办法，只能先对正文进行一次粗略的筛选——看标题。俗话说得好，这是一个看脸的世界。于是乎，文章的作者为了吸引读者，就要取个足够博眼球的标题，而所谓标题党便是充分利用这种心理，用各种颇具创意的标题来吸引读者的注意。
 
@@ -38,7 +38,7 @@ tags:
 
 <!-- more -->
 
-那么怎么研究文章标题与下载量之间的关系呢？我们知道，标题是由一个个的单词组成的，如果忽略掉单词之间的语法关系，我们可以以标题”是否包含某个单词“作为自变量，来看哪些单词与因变量（文章下载量）之间的关系最为显著。除此之外，我们还需要加上一些其他的自变量，从而更好地解释因变量的变化。本文中我们要考察的变量还包括：
+那么怎么研究文章标题与下载量之间的关系呢？我们知道，标题是由一个个的单词组成的，如果忽略掉单词之间的语法关系，我们可以以标题“是否包含某个单词”作为自变量，来看哪些单词与因变量（文章下载量）之间的关系最为显著。除此之外，我们还需要加上一些其他的自变量，从而更好地解释因变量的变化。本文中我们要考察的变量还包括：
 
 1. 作者信息，即文章是否会因为某些大牛是其作者而有非常高的访问量？
 2. 文章所属的类别，例如是应用类（Applications and Case Studies）的文章更受欢迎还是方法类（Theory and Methods）的阅读量更大？
@@ -68,7 +68,7 @@ tags:
   <img src="http://cos.name/wp-content/uploads/2016/06/dtm.png" alt="词频矩阵" />
 </div>
 
-在本文的分析中，我们定义一个词项可以是1~3个连续单词的组合，比如如果文章标题是”Applied linear regression“，那么由此生成的词项就有 applied，linear，regression，applied_linear，linear_regression，applied_linear_regression 共六个。这么做的原因在于，一个单词的意义有时会依照其上下文而有所变化，例如同样是 estimation，point estimation 和 interval estimation 就代表了两种风格的文章，所以我们希望考虑到这些变化。
+在本文的分析中，我们定义一个词项可以是1~3个连续单词的组合，比如如果文章标题是 *Applied linear regression*，那么由此生成的词项就有 applied，linear，regression，applied_linear，linear_regression，applied_linear_regression 共六个。这么做的原因在于，一个单词的意义有时会依照其上下文而有所变化，例如同样是 estimation，point estimation 和 interval estimation 就代表了两种风格的文章，所以我们希望考虑到这些变化。
 
 此外，我们希望选出来的词项具有一定的代表性，所以在构造词频矩阵的时候，我们要求每一个词项在文章集合中至少出现过两次。这样就避免了一些特殊的词语搭配因为出现在某一篇访问量极高的文章中而被挑选出来。
 
@@ -100,8 +100,6 @@ title_mat  = create_dtm(it, vectorizer)
 
 在 Lasso 回归中，我们选取罚参数使得有30个非零变量被选出，然后将它们按照系数大小做成下面这张图。注意到图中没有包括截距项，而且其中一个变量，文章所在的期数（IssueNO.），因为系数太大影响图片美观，所以对它的柱形进行了截断，其真实的数值标注在柱形上。
 
-![](images/result.png)
-
 <div align="center">
   <img src="http://cos.name/wp-content/uploads/2016/06/result.png" alt="结果展示" />
 </div>
@@ -115,7 +113,7 @@ title_mat  = create_dtm(it, vectorizer)
 1. 文章的期刊属性：IssueNO. 系数为正且非常大，说明读者更喜欢阅读最新的文章；PageOrder 系数为负，说明越靠后的文章，阅读量通常越小。（竞价排名现象有木有！）
 2. 文章所属的类别：正系数排第二的是文章类别 Theory and Methods。JASA 的文章主要有两个类别，应用类（Applications and Case Studies）和方法类（Theory and Methods），由此可以看出 JASA 的读者更关心统计模型和方法，这和 JASA 的风格是比较吻合的。但需要注意的是，这两个类别是2009年之后才有的，之前统一标记为”原创文章“，不加区分，所以这个结果会有一些误差存在。除此之外，评论类（通常是书籍评论）的文章具有负的系数，说明读者对于这一部分的文章通常不关心。
 3. 文章作者：结果中特别标注出了两位统计学家：Michael Jordan 和 Tilmann Gneiting。Jordan 是公认的统计机器学习大牛，Gneiting 是概率和预测理论的专家，这些说明了他们的领军效应。图中还有一项空白的作者，系数为负，这通常是评论类的文章，在网页上没有标明作者，所以其结果与上一点中的评论类是类似的。
-4. 文章标题：这算是本文的正题了。先来看看”黑名单“：阅读量较小的文章通常是讨论（discussion），修正（correction），评论（comment）和反驳（rejoinder），它们是其他文章的附属品，所以关注度自然也小。而”红名单“中的词项基本上反映了过去十年统计学研究的流行趋势，例如高维问题（high dimensional, principal components），变量选择（regression, selection, lasso, sparse, Bayesian variable selection），非独立型数据（correlation），Dirichlet 过程（Dirichlet processes）等。由于这些词语的曝光率很高，所以相应地，以这些词作为标题的文章也倾向于有更高的下载量。还有一个相对特殊的 racial 因为涉及敏感的种族问题，所以也比较吸引眼球。
+4. 文章标题：这算是本文的正题了。先来看看“黑名单”：阅读量较小的文章通常是讨论（discussion），修正（correction），评论（comment）和反驳（rejoinder），它们是其他文章的附属品，所以关注度自然也小。而“红名单”中的词项基本上反映了过去十年统计学研究的流行趋势，例如高维问题（high dimensional, principal components），变量选择（regression, selection, lasso, sparse, Bayesian variable selection），非独立型数据（correlation），Dirichlet 过程（Dirichlet processes）等。由于这些词语的曝光率很高，所以相应地，以这些词作为标题的文章也倾向于有更高的下载量。还有一个相对特殊的 racial 因为涉及敏感的种族问题，所以也比较吸引眼球。
 
 ### 最后的话
 
@@ -128,4 +126,4 @@ title_mat  = create_dtm(it, vectorizer)
 
 最后的最后，我们通过文章标题这个小窗口瞥见了统计学过去十年的一个缩影。下一个十年又会是怎样的光景呢？我们拭目以待。
 
-附：文中数据和代码都放在 [Github](http://github.com/yixuan/COS-article/) 上。
+附：文中数据和代码都放在 [Github](https://github.com/yixuan/COS-article/tree/master/statistics-on-article-titles/) 上。
