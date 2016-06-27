@@ -26,7 +26,7 @@ tags:
 
 **但是，**
 
-苏大叔你怎么抄得这么不走心啊！<img src="{{ site.JB.BASE_PATH }}/files/2016/06/fue.gif" alt="[扶额]" />
+苏大叔你怎么抄得这么不走心啊！<img src="http://i.imgur.com/byZg5ia.gif" alt="[扶额]" />
 
 杜老爷子说人家小孩是孔子和佛祖抱着来的，到了你这儿倒好，变成了佛祖和老君抱来的，
 
@@ -41,7 +41,7 @@ tags:
 人家只是个未满三天的孩子啊，你以为是哪吒吗？
 
 <div align="center">
-  <img src="{{ site.JB.BASE_PATH }}/files/2016/06/nezha.jpg" alt="[十冷哪吒]" />
+  <img src="http://i.imgur.com/R87Ec8m.jpg" alt="[十冷哪吒]" />
 </div>
 
 然后到了下阙，**高能来了**。
@@ -52,10 +52,10 @@ tags:
 
 那是因为最后这一句又是一个典故。相传晋元帝生了皇子，宴请百官，赐绫罗绸缎。大臣殷洪乔叩谢皇上，说“臣无功受禄，甚觉惶恐”，然后晋元帝说，“这事哪容得你有功啊？”于是百官笑惨……
 
-<img src="{{ site.JB.BASE_PATH }}/files/2016/06/chuidi.gif" alt="[捶地]" />
-<img src="{{ site.JB.BASE_PATH }}/files/2016/06/chuidi2.gif" alt="[捶地]" />
-<img src="{{ site.JB.BASE_PATH }}/files/2016/06/chuidi3.gif" alt="[捶地]" />
-<img src="{{ site.JB.BASE_PATH }}/files/2016/06/chuidi4.gif" alt="[捶地]" />
+<img src="http://i.imgur.com/yzsej8y.gif" alt="[捶地]" />
+<img src="http://i.imgur.com/yVAtVnK.gif" alt="[捶地]" />
+<img src="http://i.imgur.com/VHtil3w.gif" alt="[捶地]" />
+<img src="http://i.imgur.com/mtLPatE.gif" alt="[捶地]" />
 
 **苏轼你个老流氓……**
 
@@ -76,7 +76,7 @@ tags:
 林语堂评价苏轼说：“苏东坡是一个无可救药的乐天派、一个伟大的人道主义者、一个百姓的朋友、一个大文豪……苏东坡比中国其他的诗人更具有多面性天才的丰富感、变化感和幽默感，智能优异，心灵却像天真的小孩——这种混合等于耶稣所谓蛇的智慧加上鸽子的温文。”
 
 <div align="center">
-  <img src="{{ site.JB.BASE_PATH }}/files/2016/06/dongpo.jpg" alt="[苏东坡]" />
+  <img src="http://i.imgur.com/7iPNSWo.jpg" alt="[苏东坡]" />
 </div>
 
 参考书目：《苏轼全集校注》第九册
