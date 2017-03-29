@@ -12,7 +12,6 @@ tags:
 - PHP
 - 插件
 - 论坛
-
 ---
 
 之前统计之都一直在酝酿一系列的网站改版，但因为种种原因中断了一些时间，直到最近才又把改版计划提上了日程。其中[主站的部分](https://github.com/cosname/cosx.org)由谢大牵头，目前已经召集了一支[精锐部队](https://github.com/orgs/cosname/teams/editors)大刀阔斧地在 Github 上开干了，而论坛的部分则是由我接盘，准备把当前有些老旧的 bbPress 系统迁移到 [Flarum](http://flarum.org/) 上去。
@@ -26,7 +25,7 @@ tags:
 <!-- more -->
 
 <div align="center">
-  <img src="{{ BASE_PATH }}/images/flarum.png" alt="Flarum插件" />
+  <img src="{{ site.JB.BASE_PATH }}/images/flarum.png" alt="Flarum插件" />
 </div>
 
 说实话，论坛这种上古遗物可能确实已经有些跟不上时代了，或许只有我们这种前朝遗老还愿意花时间和精力把数据库里面一行行的记录搬来搬去，视若珍宝。不过新论坛现在看上去还是挺简洁美观的，新增的功能也都非常实用，各位大侠不妨点开看看这个[预览版](https://cos.name/flarum/)，然后到[这个帖子](https://cos.name/cn/topic/418468/)去提些意见和建议。在此先行谢过。
