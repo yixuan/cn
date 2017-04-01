@@ -1,3 +1,3 @@
 ## 怡然轩
 
-我的中文博客 [http://yixuan.cos.name/cn](http://yixuan.cos.name/cn)
+我的中文博客 [https://yixuan.cos.name/cn](https://yixuan.cos.name/cn)
