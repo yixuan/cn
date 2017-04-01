@@ -21,7 +21,7 @@ tags:
 
 刷微博，毫无悬念地又读到了纳兰容若的浣溪沙。谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳。这里有西风，有黄叶，有残阳，却唯独没有往事的。
 
-[![残阳](http://i.imgur.com/4aPT4kS.jpg)](http://i.imgur.com/4aPT4kS.jpg)
+[![残阳](https://i.imgur.com/4aPT4kS.jpg)](https://i.imgur.com/4aPT4kS.jpg)
 
 <!-- more -->
 

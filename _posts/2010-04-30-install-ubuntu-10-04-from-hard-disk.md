@@ -52,4 +52,4 @@ tags:
 
 另：关闭按钮放在左边确实有些别扭……
 
-[![](http://i.imgur.com/DmOrZ.png)](http://i.imgur.com/DmOrZ.png)
+[![](https://i.imgur.com/DmOrZ.png)](https://i.imgur.com/DmOrZ.png)

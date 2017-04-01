@@ -82,10 +82,10 @@ writeJpeg("output.jpg", imagedata(pencil) * 255);
 
 示例图片如下（点击看大图）:
 
-[![](http://i.imgur.com/Udiuc.jpg)](http://i.imgur.com/Udiuc.jpg)
+[![](https://i.imgur.com/Udiuc.jpg)](https://i.imgur.com/Udiuc.jpg)
 
 效果图如下（点击看大图）：
 
-[![](http://i.imgur.com/Wsddc.jpg)](http://i.imgur.com/Wsddc.jpg)
+[![](https://i.imgur.com/Wsddc.jpg)](https://i.imgur.com/Wsddc.jpg)
 
 biOps包到[这里](https://bitbucket.org/yixuan/cn/downloads/biOps.zip)下载（包含了依赖文件）。

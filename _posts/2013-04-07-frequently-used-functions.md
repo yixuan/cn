@@ -90,6 +90,6 @@ options(op);
 《ggplot2：数据分析与图形艺术》中的代码托管在[这里](https://github.com/cosname/ggplot2-translation/)，
 利用上面编写的函数配合`wordcloud`包，最终做出的词云是这样的：
 
-[![](http://i.imgur.com/YcPh8Tz.png)](http://i.imgur.com/YcPh8Tz.png)
+[![](https://i.imgur.com/YcPh8Tz.png)](https://i.imgur.com/YcPh8Tz.png)
 
 

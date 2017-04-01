@@ -15,7 +15,7 @@ tags:
 ---
 
 <div align="center">
-  <img src="http://i.imgur.com/7dmcchI.png" alt="quick_example" />
+  <img src="https://i.imgur.com/7dmcchI.png" alt="quick_example" />
 </div>
 
 前两天把 [showtext](http://cran.r-project.org/web/packages/showtext/index.html) 包更新到了 0.4-1 版本。因为这次更新的内容比较多，所以简单写篇博客介绍下。

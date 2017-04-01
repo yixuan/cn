@@ -18,7 +18,7 @@ tags:
 [COS论坛](http://cos.name/cn/topic/147359)里面经常会遇到的一个问题就是绘图时中文字体怎么解决。最初，一个流行的方法是使用`family = "GB1"`，但一般这样做出来的图比较难看，而且并没有完全解决问题。后来发现了[Cairo](http://cran.r-project.org/web/packages/Cairo/index.html)包，[喜大普奔](http://cos.name/cn/topic/101521)，但后来又发现它选字体的时候不太明确，也就是说我不知道怎样才能选中我想要的那个字体。再然后，[Winston Chang](https://github.com/wch)写了[extrafont](https://github.com/wch/extrafont)包，功能很完善，但需要系统里面安装Ghostscript。我是懒人，不想花时间在配置Ghostscript上，于是写了一个叫做`showtext`的包。（好像哪里不对）
 
 <div align="center">
-  <img src="http://i.imgur.com/IdFtOLP.png" />
+  <img src="https://i.imgur.com/IdFtOLP.png" />
 </div>
 
 <!-- more -->

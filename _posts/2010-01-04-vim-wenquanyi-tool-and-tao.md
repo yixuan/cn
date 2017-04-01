@@ -37,7 +37,7 @@ tags:
 
 后来想起Ubuntu下默认的是文泉驿，于是准备在Windows下也试试。看了官网的一些介绍，最后下载的是矢量的微米黑字体。按照官网的介绍，这款字体“很小很强大”，小是因为它的体积只有2M多，解开也不过5M多，但其功能却决不含糊。下面是我配置好字体后Vim的一个截图：
 
-[![](http://i.imgur.com/rT0BpPi.png)](http://i.imgur.com/rT0BpPi.png)
+[![](https://i.imgur.com/rT0BpPi.png)](https://i.imgur.com/rT0BpPi.png)
 
 可以看出字体的边缘都很平滑，视觉效果还是不错的。此外这个字体对于中文的等宽处理是让中文之间留出一个空档，避免中文太胖，但每个中文字的左侧都是与英文相对齐的。
 

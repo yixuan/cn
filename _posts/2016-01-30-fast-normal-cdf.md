@@ -51,7 +51,7 @@ max(abs(y - asy))
 <!-- more -->
 
 <div align="center">
-  <img src="http://i.imgur.com/buX1QWo.png" alt="正态分布概率表" />
+  <img src="https://i.imgur.com/buX1QWo.png" alt="正态分布概率表" />
 </div>
 
 没错，这种更快的方法其实就是两个字：查表。它的基本想法是，我们预先计算好一系列的函数取值 $(x_i,\Phi(x_i))$，然后当我们需要计算某个点 $x_0$ 时，就找到离它最近的两个点 $x_k$ 和 $x_{k+1}$，再用线性插值的方法得到 $\Phi(x_0)$ 的近似取值：

@@ -20,11 +20,11 @@ tags:
 
 方程的形式虽然简洁，但画起来可不容易，每画一个点就要解一个方程，而且经常出现斜率不存在的点，所以如果只从一个方向上来画，难免会得出NA解，使得原本光滑的曲面出现很多漏洞（如下图）。
 
-[![h01](http://i.imgur.com/K6Bs7Hu.png)](http://i.imgur.com/K6Bs7Hu.png)[![h02](http://i.imgur.com/2W5SI5r.png)](http://i.imgur.com/2W5SI5r.png)
+[![h01](https://i.imgur.com/K6Bs7Hu.png)](https://i.imgur.com/K6Bs7Hu.png)[![h02](https://i.imgur.com/2W5SI5r.png)](https://i.imgur.com/2W5SI5r.png)
 
 就因为这样，暂时的解决办法就是从两个相互垂直的方向分别画出曲面，然后把它们重叠起来，将各自的漏洞都填补好。最后再利用rgl包的贴图功能，在心上“贴好”五星红旗，一颗中国心就完成了。
 
-[![heart_snapshot01](http://i.imgur.com/N7XYXTo.png)](http://i.imgur.com/N7XYXTo.png) [![heart_snapshot02](http://i.imgur.com/9CGqGHa.png)](http://i.imgur.com/9CGqGHa.png) [![heart_snapshot03](http://i.imgur.com/SwDd22K.png)](http://i.imgur.com/SwDd22K.png)
+[![heart_snapshot01](https://i.imgur.com/N7XYXTo.png)](https://i.imgur.com/N7XYXTo.png) [![heart_snapshot02](https://i.imgur.com/9CGqGHa.png)](https://i.imgur.com/9CGqGHa.png) [![heart_snapshot03](https://i.imgur.com/SwDd22K.png)](https://i.imgur.com/SwDd22K.png)
 
 附：R源文件和用来贴图的国旗（因为贴图的位置需要做了镜像变换）。点击[这里](https://bitbucket.org/yixuan/cn/downloads/myChina.zip)下载。
 

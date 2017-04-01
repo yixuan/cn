@@ -46,7 +46,7 @@ mean of x
 
 下面我们一一解决，照例先把代码贴上：
 
-[![](http://i.imgur.com/iG2ttVy.png)](http://i.imgur.com/iG2ttVy.png)
+[![](https://i.imgur.com/iG2ttVy.png)](https://i.imgur.com/iG2ttVy.png)
 
 <!-- more -->
 

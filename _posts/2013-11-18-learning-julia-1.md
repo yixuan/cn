@@ -75,7 +75,7 @@ end
 
 由于现在博客的代码环境暂时不支持行号，所以我再贴一张图上来：
 
-[![](http://i.imgur.com/OFDdr5e.png)](http://i.imgur.com/OFDdr5e.png)
+[![](https://i.imgur.com/OFDdr5e.png)](https://i.imgur.com/OFDdr5e.png)
 
 逐行解释一下这段代码。
 
@@ -93,7 +93,7 @@ end
 
 依然与R中一样，在Julia中我们有工作空间的概念。在R中查看和设定工作空间的函数是 `getwd()` 和 `setwd()`，在Julia中则对应为 `pwd()` 和 `cd()`。接下来我们用 `include()` 函数加载这个文件（相当于R中的 `source()`），然后做一个简单的测试：
 
-[![](http://i.imgur.com/hWZiNKG.png)](http://i.imgur.com/hWZiNKG.png)
+[![](https://i.imgur.com/hWZiNKG.png)](https://i.imgur.com/hWZiNKG.png)
 
 上面的 `randn()` 是生成标准正态随机数的函数，用分号结尾是避免其取值被打印出来（这两点都源自Matlab）。最后我们用 `exit()` 来退出Julia。
 

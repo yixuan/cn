@@ -32,9 +32,9 @@ tags:
 
 下面的三组箱线图是对这三种分布的一个对比，横轴是样本量，纵轴是均值分布的箱线图。可以看出，对于正态分布，样本量越大，均值抽样分布的离散程度越小；对于柯西分布，离散程度几乎不变；对于第三种分布，很明显离散程度迅速变大。需要注意的是，绘制箱线图的数据只取了中间的一半，因此实际的分布会比箱线图所反映出的更加分散。
 
-[![正态分布均值分布](http://i.imgur.com/KO8rPur.png)](http://i.imgur.com/KO8rPur.png)
-[![柯西分布均值分布](http://i.imgur.com/1wzCKN9.png)](http://i.imgur.com/1wzCKN9.png)
-[![正态分布平方倒数的均值分布](http://i.imgur.com/onm403J.png)](http://i.imgur.com/onm403J.png)
+[![正态分布均值分布](https://i.imgur.com/KO8rPur.png)](https://i.imgur.com/KO8rPur.png)
+[![柯西分布均值分布](https://i.imgur.com/1wzCKN9.png)](https://i.imgur.com/1wzCKN9.png)
+[![正态分布平方倒数的均值分布](https://i.imgur.com/onm403J.png)](https://i.imgur.com/onm403J.png)
 
 
 ### 样本量要多大才正态？

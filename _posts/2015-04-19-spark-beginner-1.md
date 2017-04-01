@@ -48,7 +48,7 @@ Ubuntu 下是
 
 
 <div align="center">
-  <img src="http://i.imgur.com/2IbWNhI.png" />
+  <img src="https://i.imgur.com/2IbWNhI.png" />
 </div>
 
 
@@ -71,7 +71,7 @@ Ubuntu 下是
 
 
 <div align="center">
-  <img src="http://i.imgur.com/WXuIyFf.png" />
+  <img src="https://i.imgur.com/WXuIyFf.png" />
 </div>
 
 

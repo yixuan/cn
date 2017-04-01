@@ -17,7 +17,7 @@ tags:
 
 我挑了友情链接里面数据比较好抓的几位大人的博客，然后计算每月的博客数，如下图所示：
 
-[![](http://i.imgur.com/N1bBFGg.png)](http://i.imgur.com/N1bBFGg.png)
+[![](https://i.imgur.com/N1bBFGg.png)](https://i.imgur.com/N1bBFGg.png)
 
 <!-- more -->
 
@@ -33,7 +33,7 @@ tags:
 
 当然玩笑归玩笑，事实还是不太乐观的，博客相比以往已然没落了许多。
 
-[![](http://i.imgur.com/UfUjjUh.png)](http://i.imgur.com/UfUjjUh.png)
+[![](https://i.imgur.com/UfUjjUh.png)](https://i.imgur.com/UfUjjUh.png)
 
 我们可以列举出一些杀死博客的罪魁祸首，当然这里我应该限定一下范围，大概指的是COS各位老大这种生活+技术的个人博客。首当其冲的自然是各种“短平快”风格的微博工具。为什么？因为写博客累啊，洋洋洒洒数千字，太短了都不好意思发出来，尤其是偏技术的文章。博客往往是主题驱动，而微博则是事件驱动。事件常有，而主题不常有。
 

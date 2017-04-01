@@ -16,7 +16,7 @@ tags:
 
 哦，你问我后来怎么样了？其实就是下面这个计划：
 
-[![](http://i.imgur.com/MTV2Kbf.png)](http://i.imgur.com/MTV2Kbf.png)
+[![](https://i.imgur.com/MTV2Kbf.png)](https://i.imgur.com/MTV2Kbf.png)
 
 换句话说，`R2SWF` 包就在这个时候诞生了。
 

@@ -12,7 +12,7 @@ tags:
 - 传承
 ---
 
-[![](http://i.imgur.com/RBJ6itu.jpg)](http://i.imgur.com/RBJ6itu.jpg)
+[![](https://i.imgur.com/RBJ6itu.jpg)](https://i.imgur.com/RBJ6itu.jpg)
 
 第六届中国R语言会议是前天闭幕的，整整两天的日程，又是一次规模空前的盛会。根据后台统计，报名的人数超过了600，而实际到会也有400以上，
 再加上强大的演讲者阵容，以及相当拉风的国学馆会场，可以说是力超以往各届。
@@ -23,11 +23,11 @@ tags:
 <!-- more -->
 
 ### 谢老大
-[![](http://i.imgur.com/spJlm75.jpg)](http://i.imgur.com/spJlm75.jpg)
+[![](https://i.imgur.com/spJlm75.jpg)](https://i.imgur.com/spJlm75.jpg)
 跟[头目](http://yihui.name/)又是一年半没见，不知不觉谢老大都已经要博士毕业了，先预祝一下填坑顺利。
 会议的前一天，我和老大、教主、魔王一起去汴京大学听 Maindonald 教授的讲座，
 其间教主拉着我问，“他真的是谢老大吗？怎么跟我大一时候见的一点变化也没有啊？”直到现在我回想起这句话，才觉得教主此言有深意，恍然大悟
-这真的不是在[黑PhD](http://i.imgur.com/NFpOldB.jpg)吗……
+这真的不是在[黑PhD](https://i.imgur.com/NFpOldB.jpg)吗……
 
 老大的报告是这几年编写R包的经验总结，从最初的`animation`这块敲门砖，到`knitr`这个彻底改变了很多人写作习惯的神器，总结出一句话，好玩是第一生产力。
 而至于宣传，老大则用“善易者不卜”这句话来作结。此言一出，被林师兄化用一番，成了本次会议的另一个亮点。
@@ -42,19 +42,19 @@ tags:
 我翻了翻归档，发现有几篇关于统计的文章都是“严酷的魔王”这个ID发布的，于是在新浪微博里搜到相同的ID，那时候魔王才大三吧。后来又找到魔王的博客，也让他进驻了COS主站，
 总之是一步一步诱使魔王入圈，成为我统中人。
 
-[![](http://i.imgur.com/Y0pUMxY.jpg)](http://i.imgur.com/Y0pUMxY.jpg)
+[![](https://i.imgur.com/Y0pUMxY.jpg)](https://i.imgur.com/Y0pUMxY.jpg)
 
 走时匆匆没能道别，成了一大遗憾。
 
 ### 武林萌主
-[![](http://i.imgur.com/P6hp9XB.jpg)](http://i.imgur.com/P6hp9XB.jpg)
+[![](https://i.imgur.com/P6hp9XB.jpg)](https://i.imgur.com/P6hp9XB.jpg)
 
 去年mo都，萌主（[@Yummy_zhou](http://weibo.com/zhouyummy)）横空出世，一时江湖上多少英雄豪杰都被他萌得一脸是血。今年驾临di都，
 因段子众多，被益辉唤作段王爷。会议前一天晚上的沙龙上，一串串眩目的JS交互图形震惊四座，博得全场喝彩。
 
 萌主教育我们，要做一名有情怀的R程序员，而更难能可贵的是，萌主能把前端做得如此之美观，着实让人敬佩。然后的然后，我不小心想起了下面的场景：
 
-[![](http://i.imgur.com/NPgHnOT.png)](http://i.imgur.com/NPgHnOT.png)
+[![](https://i.imgur.com/NPgHnOT.png)](https://i.imgur.com/NPgHnOT.png)
 
 ### 涛声依旧
 从第二届R会议的初露锋芒，到如今成为会议的首脑级人物，涛涛（[@三水成海](http://weibo.com/u/1869812215)）的成长真是让人欣喜。
@@ -62,7 +62,7 @@ tags:
 前前后后忙了好几个月，邮件少说也有几百个来回，更不用说其他的借教室申经费约演讲者。本次会议名义上是陈昱小师弟当主席，
 但其实大家都知道幕后黑手是谁。陈森师弟发微博说，幕后黑手累了，其实这已经是历届名义主席和实际主席的经典动作了，参见下图。
 
-[![](http://i.imgur.com/iVR1phH.jpg)](http://i.imgur.com/iVR1phH.jpg)[![](http://i.imgur.com/4Ce2bct.jpg)](http://i.imgur.com/4Ce2bct.jpg)
+[![](https://i.imgur.com/iVR1phH.jpg)](https://i.imgur.com/iVR1phH.jpg)[![](https://i.imgur.com/4Ce2bct.jpg)](https://i.imgur.com/4Ce2bct.jpg)
 
 走之前的聚餐上，涛涛带着倦意跟我说，“我终于能体会你当时的感觉了，参会和办会完全不一样”。
 
@@ -72,14 +72,14 @@ tags:
 还记得前面说的COS的老中青三代黑客吧，当年的少年黑客如今也已硕果累累晋升中生代，成了承上启下的一个传奇了。惟一让现在中生代黑客感到惆怅的乃是“美人迟暮，
 英雄发福”，聊以慰藉的是“遏制住了体重增速过快的趋势”（冤有头债有主，此为太云语，我只负责转发）。
 
-[![](http://i.imgur.com/WjcyB5p.jpg)](http://i.imgur.com/WjcyB5p.jpg)
+[![](https://i.imgur.com/WjcyB5p.jpg)](https://i.imgur.com/WjcyB5p.jpg)
 
 重回讲坛，小楠还是一贯地追求极值的美感和黑客独有的教义，正如他送我那本不明觉厉的天书证明，如果非要我用文字加以形容，可谓“身是人间客，行若天上星”。
 
 小楠的ID是[@road2stat](http://weibo.com/road2stat)，如今这条路上草木渐盛，楠已成林。
 
 ### 后有来者
-[![](http://i.imgur.com/fUQyxu3.jpg)](http://i.imgur.com/fUQyxu3.jpg)
+[![](https://i.imgur.com/fUQyxu3.jpg)](https://i.imgur.com/fUQyxu3.jpg)
 前无古人易，后有来者难。老人们纷纷离去，谁来接手可是愁等大事。这次参会，又结识了一批参与组织会议的师弟师妹（其实已经有不少“老人”混迹其中），
 这也算是我拍屁股走人后感到非常欣慰的一件事了。
 
@@ -103,19 +103,19 @@ tags:
 陈森（[@ActuaryChan](http://weibo.com/u/2665167631)）师弟，和陈妍陈昱并称三陈（太云语），接触的时间太短，没能好好聊聊，但太云也是一直说师弟靠谱，（据说酒量也大），见面后颇有一见如故之感。
 写这篇博客的时候翻了下大家传的照片，可是，可是，怎么关于师弟的照片都是下面这些啊！！
 
-[![](http://i.imgur.com/cgHyAJG.jpg)](http://i.imgur.com/cgHyAJG.jpg)
-[![](http://i.imgur.com/u1Gxh5S.jpg)](http://i.imgur.com/u1Gxh5S.jpg)
+[![](https://i.imgur.com/cgHyAJG.jpg)](https://i.imgur.com/cgHyAJG.jpg)
+[![](https://i.imgur.com/u1Gxh5S.jpg)](https://i.imgur.com/u1Gxh5S.jpg)
 
 包括陈森，还有其他几位第一次见的师弟师妹，真希望以后能再有机会相聚一堂，把我统这种精神一直传承下去。
 
 最后还要特别感谢一下建冲（[@苏建冲study](http://weibo.com/710030221)）这段时间的辛勤工作，低调+踏实，我尤其敬佩的那种人。
 
-[![](http://i.imgur.com/DGdkTj6.jpg)](http://i.imgur.com/DGdkTj6.jpg)
+[![](https://i.imgur.com/DGdkTj6.jpg)](https://i.imgur.com/DGdkTj6.jpg)
 
 
 本来还有好多人要写的，像是三年未见的菁菁，和一直没有断过联系的太云一硕堰平思喆舰哥等等，只因常挂心上，觉得从未远离。
 
 是为记。
 
-[![](http://i.imgur.com/qJl4gNe.jpg)](http://i.imgur.com/qJl4gNe.jpg)
+[![](https://i.imgur.com/qJl4gNe.jpg)](https://i.imgur.com/qJl4gNe.jpg)
 
