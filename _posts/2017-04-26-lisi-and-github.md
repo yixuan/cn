@@ -3,7 +3,7 @@ date: '2017-04-26 12:58:25'
 layout: post
 slug: lisi-and-github
 status: publish
-title: 李斯与 Github
+title: 李斯与 GitHub
 categories:
 - 生活
 tags:
@@ -13,8 +13,8 @@ tags:
 
 抱歉，我又标题党了。
 
-我可以很负责任地说，李斯没有用过 Github。取这个标题，是因为昨天在 [Hacker News](https://news.ycombinator.com/item?id=14182203)
-上看到一篇歪果仁写的关于中国文字演变的系列文章（[一](https://al3x.svbtle.com/on-chinese-writing-1)，[二](https://al3x.svbtle.com/on-chinese-writing-2)，[三](https://al3x.svbtle.com/on-chinese-writing-when-mao-reinvents-writing)），觉得很有意思。其中第二篇里讲到秦始皇时期的统一文字，用了这样一个类比（因为暂时无法联系到作者授权，所以就不贴原文了，大意如下）：
+我可以很负责任地说，李斯没有用过 GitHub。取这个标题，是因为昨天在 [Hacker News](https://news.ycombinator.com/item?id=14182203)
+上看到一个歪果仁写的关于中国文字演变的系列文章（[一](https://al3x.svbtle.com/on-chinese-writing-1)，[二](https://al3x.svbtle.com/on-chinese-writing-2)，[三](https://al3x.svbtle.com/on-chinese-writing-when-mao-reinvents-writing)），觉得很有意思。其中第二篇里讲到秦始皇时期的统一文字，用了这样一个类比（因为暂时无法联系到作者授权，所以就不贴原文了，大意如下）：
 
 > 因为中国这个项目太大，所以每个诸侯国都从文字的总库进行了分流（Fork），导致文字库变得异常混乱。秦始皇下令说我们要有一个统一的主线，于是把这事交给了项目经理李斯丞相。李斯于是就开始处理各种合并请求（Pull request），负责各分支的合并（Merge）事项。
 
