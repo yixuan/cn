@@ -23,7 +23,7 @@ tags:
 
 鉴于此，我之前便萌生了一个想法，就是把帮助文件动态生成的特性与chm的优点结合起来，为2.10.0以上版本的R做一个简便易用的帮助系统。下面是一幅程序运行的截图：
 
-[![](https://i.imgur.com/NC4nPs7.png)](https://i.imgur.com/NC4nPs7.png)
+[![](https://upload.yixuan.blog/2010/01/rhelper.png)](https://upload.yixuan.blog/2010/01/rhelper.png)
 
 程序主要由两部分组成，一部分是外部程序，用以打开动态生成的html文件，另一部分是R中的函数，用来调用这个外部程序。程序可以从[这里](https://bitbucket.org/yixuan/cn/downloads/Rhelper_bin_20100130.zip)下载，“安装”的办法是把压缩包里的Rhelper.exe和libgcc_s_dw2-1.dll复制到R安装目录的bin文件夹中，然后在R中运行Rhelper.R中的函数。如果准备经常用的话，可以把这个函数加入到etc/Rprofile.site中，这样每次打开R的时候程序就会自动把`Rhelper()`这个函数载入，用的时候只需`Rhelper(topic)`，比如`Rhelper(par)`就可以了。
 

@@ -21,9 +21,9 @@ tags:
 
 Ubuntu下安装的方法就不用说了，`sudo apt-get install scite` 就可以搞定。软件非常小，但其功能绝对不容小觑，只要你有耐心设置好配置文件，几乎任何一种语言都可以实现语法高亮、代码折叠和自动完成等功能。下面是编辑R脚本时的截图。
 
-[![SciTE自动完成](https://i.imgur.com/ppWVe.png)](https://i.imgur.com/ppWVe.png)
+[![SciTE自动完成](https://upload.yixuan.blog/2010/09/scite-1.png)](https://upload.yixuan.blog/2010/09/scite-1.png)
 
-[![SciTE函数提示](https://i.imgur.com/CCurr.png)](https://i.imgur.com/CCurr.png)
+[![SciTE函数提示](https://upload.yixuan.blog/2010/09/scite-2.png)](https://upload.yixuan.blog/2010/09/scite-2.png)
 
 要实现上面的效果，需要一些额外的配置文件，可以到下面下载。
 

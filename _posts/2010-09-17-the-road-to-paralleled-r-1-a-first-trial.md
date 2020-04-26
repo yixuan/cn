@@ -18,10 +18,10 @@ tags:
 一直以来，R的并行计算都是一件令人头疼的问题。尽管有各种各样的包可以辅助地实现并行计算，但R本身依然只能使用一个核，这对于逐渐普及的多核CPU来说确实是一种资源的浪费。而对于我们普通用户来说，并行计算的编程和实现似乎是一件遥不可及的事，但昨天偶然在图书馆翻到的一本书却迅速改变了我的这种观点。下面先把图和真相贴出来。
 
 
-[![串行计算](https://i.imgur.com/p4G28.png)](https://i.imgur.com/p4G28.png)
+[![串行计算](https://upload.yixuan.blog/2010/09/serial.png)](https://upload.yixuan.blog/2010/09/serial.png)
 
 
-[![并行计算](https://i.imgur.com/tTxio.png)](https://i.imgur.com/tTxio.png)
+[![并行计算](https://upload.yixuan.blog/2010/09/parallel.png)](https://upload.yixuan.blog/2010/09/parallel.png)
 
 
 上面两幅图展示了同一个函数（矩阵乘法）的两种实现途径，第一种是普通的计算，从图中可以看出，只有一个CPU核处在完全使用状态，总的CPU利用率是50%；而第二种方法采用了并行计算，两个CPU核都是100%的使用率。从时间上来看，第二种方法几乎为第一种的一半，与CPU的利用率相吻合。
