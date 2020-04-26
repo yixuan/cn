@@ -13,10 +13,10 @@ tags:
 - 新年
 ---
 
-![ms1](https://upload.yixuan.blog/2009/12/ms1.png)
+![ms1](https://upload.yixuan.blog/cn/2009/12/ms1.png)
 
-![ms2](https://upload.yixuan.blog/2009/12/ms2.png)
+![ms2](https://upload.yixuan.blog/cn/2009/12/ms2.png)
 
-![ms3](https://upload.yixuan.blog/2009/12/ms3.png)
+![ms3](https://upload.yixuan.blog/cn/2009/12/ms3.png)
 
 算是年底给大家找点乐子吧。:-)

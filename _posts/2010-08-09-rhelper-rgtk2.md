@@ -28,10 +28,10 @@ tags:
 由于RGtk2包没有直接解析HTML的控件，所以文档的格式化成了程序中最大的一个难题。目前我是直接从Rd文档中获取文字和相应的标签，然后对不同的标签应用不同的格式。下面是两张效果图，分别是Windows下和Ubuntu下的运行界面：
 
 <p style="text-align: center;">Windows下运行界面</p>
-[![](https://upload.yixuan.blog/2010/08/rhelper-windows.png)](https://upload.yixuan.blog/2010/08/rhelper-windows.png)
+[![](https://upload.yixuan.blog/cn/2010/08/rhelper-windows.png)](https://upload.yixuan.blog/cn/2010/08/rhelper-windows.png)
 
 <p style="text-align: center;">Ubuntu下运行界面</p>
-[![](https://upload.yixuan.blog/2010/08/rhelper-ubuntu.png)](https://upload.yixuan.blog/2010/08/rhelper-ubuntu.png)
+[![](https://upload.yixuan.blog/cn/2010/08/rhelper-ubuntu.png)](https://upload.yixuan.blog/cn/2010/08/rhelper-ubuntu.png)
 
 其中蓝色的链接都是可以点击的（光标不会变成手形），不过目前Rd文档的解析仍然是个大工程，有很多函数的文档会出现格式混乱的现象，这个还需要不断修补。总之这个程序还只是一个初步的框架，很多细节仍有待完善。
 

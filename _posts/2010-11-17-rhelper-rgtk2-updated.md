@@ -46,7 +46,7 @@ tags:
 截图：
 
 
-[![Rhelper-RGtk2](https://upload.yixuan.blog/2010/11/rhelper-update.png)](https://upload.yixuan.blog/2010/11/rhelper-update.png)
+[![Rhelper-RGtk2](https://upload.yixuan.blog/cn/2010/11/rhelper-update.png)](https://upload.yixuan.blog/cn/2010/11/rhelper-update.png)
 
 
 

@@ -25,15 +25,15 @@ tags:
 
 可以先简单看看下面的这张截图，演示的是洛仑兹混沌理论的“蝴蝶效应”，动态运行的程序和源代码放在附件的Lorenz文件夹中（文章最后），运行需要Java环境支持，如果没有的话可以到[http://www.java.com/](http://www.java.com/)下载。
 
-[![](https://upload.yixuan.blog/2010/03/processing-butterfly.png)](https://upload.yixuan.blog/2010/03/processing-butterfly.png)
+[![](https://upload.yixuan.blog/cn/2010/03/processing-butterfly.png)](https://upload.yixuan.blog/cn/2010/03/processing-butterfly.png)
 
 Processing确实很艺术，不过对于数据的理解，光靠画图还是不够的。老大之前说过，就目前而言，Processing基本上跟统计没什么关系，因此它的作用更像是画图而不是数据可视化。如果想要结合统计分析与图形表达，一个很自然的想法就是让Processing这样的绘图工具与R这样的统计计算软件结合起来。R也有很强大的绘图功能，但是有一个小问题就是，对于动画这种表现形式，在R中会受到一些制约，这主要体现在R加载图形时会有一小段时间的缓冲，因此每一秒钟加载图形的数量不能太多，这使得图形的运动不够平滑，而且也较难表现高速的变化。Processing正好可以弥补这点不足，它默认的帧速是60帧/秒，这对于一般的视觉体验来说是足够了。
 
 幸运的是，Processing与Java的结合非常紧密，而R与Java的沟通又可以通过rJava包来实现，所以在Processing中使用R的函数也就成为了可能。下面再给一个演示布朗运动的例子，程序和源代码放在附件的Brown_trace文件夹中。以下两张图是两次布朗运动的“轨迹”实现，其中需要用到的随机数都是通过R来生成的。
 
-[![](https://upload.yixuan.blog/2010/03/brown-1.png)](https://upload.yixuan.blog/2010/03/brown-1.png)
+[![](https://upload.yixuan.blog/cn/2010/03/brown-1.png)](https://upload.yixuan.blog/cn/2010/03/brown-1.png)
 
-[![](https://upload.yixuan.blog/2010/03/brown-2.png)](https://upload.yixuan.blog/2010/03/brown-2.png)
+[![](https://upload.yixuan.blog/cn/2010/03/brown-2.png)](https://upload.yixuan.blog/cn/2010/03/brown-2.png)
 
 （大家来找茬：通过以上两幅图，你能找出两次“轨迹”实现中**共同的起点**吗？）
 

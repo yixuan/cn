@@ -52,4 +52,4 @@ tags:
 
 另：关闭按钮放在左边确实有些别扭……
 
-[![](https://upload.yixuan.blog/2010/04/ubuntu-recursion.png)](https://upload.yixuan.blog/2010/04/ubuntu-recursion.png)
+[![](https://upload.yixuan.blog/cn/2010/04/ubuntu-recursion.png)](https://upload.yixuan.blog/cn/2010/04/ubuntu-recursion.png)
