@@ -60,6 +60,20 @@
        });
     /*]]>*/</script>
 
+    <!-- Isso comments -->
+    {% case site.JB.comments.provider %}
+    {% when "custom" %}
+    <script data-isso="//c.yixuan.blog/"
+            data-isso-lang="zh_CN"
+            data-isso-reply-to-self="true"
+            data-isso-require-author="true"
+            data-isso-require-email="true"
+            data-isso-avatar="false"
+            data-isso-gravatar="true"
+            data-isso-feed="true"
+            src="//c.yixuan.blog/js/embed.min.js"></script>
+    {% endcase %}
+
 {% include JB/analytics %}
 
   </head>
@@ -110,7 +124,10 @@
               <h2 class="blocktitle">订阅</h2>
               <ul>
                 <li class="cat-item"><a href="{{ BASE_PATH }}/rss.xml">文章 RSS</a></li>
+                {% case site.JB.comments.provider %}
+                {% when "disqus" %}
                 <li class="cat-item"><a href="https://joyfulhomecn.disqus.com/latest.rss">评论 RSS</a></li>
+                {% endcase %}
               </ul>
             </li>
 
@@ -176,7 +193,7 @@
 
         <div id="footer">
           <div class="lt">
-            版权所有 © 2017 怡然轩 | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="https://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
+            版权所有 © 2009-2020 怡然轩 | 由 <a href="http://jekyllbootstrap.com/" title="Jekyll Bootstrap" rel="copyright">Jekyll Bootstrap</a> 和 <a href="https://pages.github.com/" title="GitHub Pages" rel="copyright">GitHub Pages</a> 构建
           </div>
 
           <div class="rt">主题修改自 <a href="https://wordpress.org/extend/themes/delicate" title="delicate" rel="copyright">delicate</a> <a href="http://www.nattywp.com/" title="NattyWP"><img src="{{ ASSET_PATH }}/images/natty-logo.png" width="82" height="17" valign="3px" class="png" alt="NattyWP" align="middle"></a>

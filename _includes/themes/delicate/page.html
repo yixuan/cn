@@ -11,8 +11,10 @@
   <p class="postmetadata">
   </p>
 
-  <p><small>订阅 <a href="https://joyfulhomecn.disqus.com/latest.rss">评论RSS</a></small>
-  </p>
+  {% case site.JB.comments.provider %}
+  {% when "disqus" %}
+  <p><small>订阅 <a href="https://joyfulhomecn.disqus.com/latest.rss">评论RSS</a></small></p>
+  {% endcase %}
 
   {% include JB/comments %}
 
