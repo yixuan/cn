@@ -15,35 +15,24 @@
     <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-ui.custom.min.js"></script>
     <link rel="stylesheet" href="{{ ASSET_PATH }}/css/flick/jquery-ui.custom.css" type="text/css" />
 
-	<!-- Highlight support -->
+    <!-- Highlight support -->
     <link href="{{ ASSET_PATH }}/css/highlight.css" rel="stylesheet">
 
-    <!-- MathJax support -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
-        }
+    <!-- KaTeX support -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=" crossorigin="anonymous" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI=" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          "ignoredTags": ["script", "noscript", "style", "textarea", "pre", "code"],
+          "delimiters": [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        });
       });
-    </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-          }
-        });
-    </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Queue(function() {
-            var all = MathJax.Hub.getAllJax(), i;
-            for(i=0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    </script>
-    <script type="text/javascript"
-       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <!-- Google Custom Search -->
@@ -55,21 +44,21 @@
             '//www.google.com/cse/cse.js?cx=' + cx;
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
       })();
-   </script>
+    </script>
 
-   <!-- Slideshow -->
-   <script type="text/javascript" charset="utf-8">/*<![CDATA[*/
-    jQuery(document).ready(function() {
-        jQuery(".slideshow").cycle({
-          fx: "fade",
-          timeout: 6000,
-          pager: "#slideshow-nav",
-          speed: 1000,
-          pagerEvent: "click",
-          pauseOnPagerHover: true,
-          cleartypeNoBg: true });
-      });
-   /*]]>*/</script>
+    <!-- Slideshow -->
+    <script type="text/javascript" charset="utf-8">/*<![CDATA[*/
+     jQuery(document).ready(function() {
+         jQuery(".slideshow").cycle({
+           fx: "fade",
+           timeout: 6000,
+           pager: "#slideshow-nav",
+           speed: 1000,
+           pagerEvent: "click",
+           pauseOnPagerHover: true,
+           cleartypeNoBg: true });
+       });
+    /*]]>*/</script>
 
 {% include JB/analytics %}
 
