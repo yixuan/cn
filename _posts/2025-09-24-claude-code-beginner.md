@@ -17,7 +17,7 @@ tags:
 - 开源
 ---
 
-AI 辅助编程已经流行了好一阵子了，但一直没找到合适的机会去体验。正好最近在学习 Megatron 这个大模型训练框架，第一眼看来代码量大，而且逻辑关系复杂，所以就准备尝试一下用 AI 来辅助代码理解。目前市面上有不少可用的工具，像是 [Cursor](https://cursor.com/)，[Gemini CLI](https://github.com/google-gemini/gemini-cli)，[Claude Code](https://github.com/anthropics/claude-code) 等等。因为不想和开发环境做太多绑定，而且我个人还是更偏向于使用开源工具，所以就暂时不考虑 Cursor 这样自带编辑器而且闭源的工具了。这样下来主要对比的就是 Gemini CLI 和 Claude Code。
+AI 辅助编程已经流行了好一阵子了，但一直没找到合适的机会去体验。正好最近在学习 Megatron 这个大模型训练框架，第一眼看来代码量大，而且逻辑关系复杂，所以就准备尝试一下用 AI 来辅助代码理解。目前市面上有不少可用的工具，像是 [Cursor](https://cursor.com/)，[Gemini CLI](https://github.com/google-gemini/gemini-cli)，[Claude Code](https://github.com/anthropics/claude-code) 等等。因为不想和开发环境做太多绑定，所以就暂时不考虑 Cursor 这样自带编辑器的工具了。这样下来主要对比的就是 Gemini CLI 和 Claude Code。
 
 一开始我确实尝试了一下 Gemini CLI，但它目前只支持使用 Gemini 模型，而且国内访问比较麻烦，所以一番折腾之后就决定换成 Claude Code。Claude Code 的好处是能更换基座模型，而且国内的大模型好几家都支持 Anthropic 的 API，例如 [GLM](https://docs.bigmodel.cn/cn/guide/develop/claude)、[DeepSeek V3.1](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api)，[Qwen3-Coder](https://qwenlm.github.io/zh/blog/qwen3-coder/) 等。这里就简单记录一下配置的过程，当作是学习笔记。
 
@@ -29,7 +29,7 @@ AI 辅助编程已经流行了好一阵子了，但一直没找到合适的机�
 
 ### 第1步：远程服务器配置
 
-我总体的设想是把代码仓库放在远程服务器上（其实就是我办公室的工作站），然后本地用 VS Code 访问服务器，同时运行 Claude Code 的交互式命令行工具。这一步主要是设置好 SSH 访问的密钥，否则 VS Code 每次连接服务器都要输密码，不太方便。
+我总体的设想是把代码仓库放在远程 Linux 服务器上（其实就是我办公室的工作站），然后本地用 VS Code 访问服务器，同时运行 Claude Code 的交互式命令行工具。这一步主要是设置好 SSH 访问的密钥，否则 VS Code 每次连接服务器都要输密码，不太方便。
 
 以 Windows 为例，在命令行中输入
 
@@ -153,7 +153,7 @@ export ANTHROPIC_AUTH_TOKEN="Your API Key"
     <img src="https://upload.yixuan.blog/cn/2025/09/claude_2.png" alt="测试大语言模型功能" />
 </div>
 
-此外，为了更好地让 Claude Code 与 VS Code 交互，推荐在 VS Code 中安装 Claude Code for VS Code 这个插件。安装完成之后，就可以通过右上角的按钮随时启动 Claude Code。此外，下一节会展示通过这个插件来让 Claude Code 和 VS Code 进行联动的一些功能。
+为了更好地让 Claude Code 与 VS Code 交互，推荐在 VS Code 中安装 Claude Code for VS Code 这个插件。安装完成之后，就可以通过右上角的按钮随时启动 Claude Code。此外，下一节会展示通过这个插件来让 Claude Code 和 VS Code 进行联动的一些功能。
 
 <div align="center">
     <img src="https://upload.yixuan.blog/cn/2025/09/claude_extension.png" alt="Claude Code for VS Code 插件" />
@@ -220,7 +220,7 @@ export ANTHROPIC_AUTH_TOKEN="Your API Key"
 
 在退出 Claude Code 之前，可以运行一下 `/cost` 这个命令，它会告诉你本次会话 Claude Code 消耗了多少大语言模型的输入和输出，并依此估计调用 API 的费用（仅对使用 Claude 官方 API 的场景有意义）。**这都是白花花的银子啊。**
 
-此外，可以让 Claude Code 将本次会话的内容进行总结，并保存为日志文件。当然，这种方式下 Claude Code 不会把会话中的所有细节都记录下来。如果想要完整地把对话的所有输入输出都保存下来，可以在启动 Claude Code 之前运行 `script` 命令，如下所示：
+另外，可以让 Claude Code 将本次会话的内容进行总结，并保存为日志文件。当然，这种方式下 Claude Code 不会把会话中的所有细节都记录下来。如果想要完整地把对话的所有输入输出都保存下来，可以在启动 Claude Code 之前运行 `script` 命令，如下所示：
 
 ```bash
 script claude_code_2025xxxx.log
